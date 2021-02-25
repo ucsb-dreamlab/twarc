@@ -8,7 +8,7 @@ Twarc is a Python tool that comes along with 47 small python utilities for harve
 
 The twarc readme is fairly comprehensive.  If you are comfortable running Python scripts, and have a usable installation with pip, you should be able to get up and running quickly.
 
-This guide concentrates on running the individual twarc utilities.
+This guide concentrates on running the individual [twarc utilities](markdown).
 
 
 
