@@ -1,32 +1,20 @@
-## Welcome to GitHub Pages
+## This is an experiment
 
-You can use the [editor on GitHub](https://github.com/ucsb-collaboratory/twarc/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+We are practicing using github pages to produce helpful content for our communities to get work done.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Twarc is a Python tool that comes along with 47 small python utilities for harvesting and working with data from the Twitter public API.
 
-### Markdown
+### Get twarc
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The twarc readme is fairly comprehensive.  If you are comfortable running Python scripts, and have a usable installation with pip, you should be able to get up and running quickly.
 
-```markdown
-Syntax highlighted code block
+This guide concentrates on running the individual twarc utilities.
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+ [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
