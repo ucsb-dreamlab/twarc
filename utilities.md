@@ -14,7 +14,7 @@ output: html
 Here is where the intro to utilities will go.
 ...snip...   
 <a name="headers"/>
-## [Filtering](filtering_utilities.md)
+## [Filtering](filtering.md)
   - deduplicate.py: filters out duplicate ids from tweets
   - filter_date.py: filters tweets by date supplied
   - filter_users.py: filters tweets by user
@@ -27,7 +27,7 @@ Here is where the intro to utilities will go.
   - twarc-archive.py: filters tweets by specific word supplied
   - webarchives.py: filters tweets by presence or absence of webarchive
 
-## [Extraction](extraction_utilities.md)
+## [Extraction](extraction.md)
   - embeds.py: extracts list of media urls
   - emojis.py: extracts emojis and number of times used
   - extractor.py: overall extractor of attributes
@@ -43,7 +43,7 @@ Here is where the intro to utilities will go.
   - tweet_urls.py: extracts urls
   - users.py: extracts user names/screen names
 
-## [Visualization](visualization_utilities.md)
+## [Visualization](visualization.md)
   - geojson.py: creates a geojson file that can be used for geo visualization
   - json2csv.py: creates a csv of tweets
   - network.py: creates a static D3 network of tweets
@@ -51,7 +51,7 @@ Here is where the intro to utilities will go.
   - wall.py: creates a wall of tweets
   - wordcloud.py: creates a wordcloud of tweets
 
-## [Status](status_utilities.md)
+## [Status](status.md)
   - deleted.py: checks the status of each tweet, outputting tweets that have been deleted
   - deletes.py: takes deleted tweet output and determines why tweet/user was deleted
   - deleted_users.py: checks the status of each tweet, outputting tweets/users that have been deleted
@@ -61,13 +61,13 @@ Here is where the intro to utilities will go.
   - tweet_compliance.py: provides most recent version of a tweet, if it exists
   - wayback.py: reads stream of tweets and checks whether that tweet is archived at Internet Archive
 
-## [Organization](organization_utilities.md)
+## [Organization](organization.md)
   - sort_by_id.py: sorts tweets by id
   - unshrtn.py: unshortens urls 
   - urls.py: takes unshorted urls and prints them out
   - youtubedl.py: uses youtube-dl to download video content in tweets
  
-## [System](system_utilities.md)
+## [System](system.md)
   - auth_timing.py: allows search 450 requests every 15 minutes, and User Auth contexts at 180 requests per 15 minutes
   - remove_limit.py: removes limit warnings from API
   - validate.py: removes unused imports
