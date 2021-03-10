@@ -22,7 +22,7 @@ Usage:
 <a name="unshrtn.py"/>
 
 ## unshrtn.py
-This utility unshortens urls. The microservice _unshrtn_ is needed to run this utility. It’s best run with Docker https://www.docker.com/get-started -> https://github.com/DocNow/unshrtn.
+This utility unshortens urls. The microservice _unshrtn_ is needed to run this utility. [unshrtn](https://github.com/DocNow/unshrtn) best run with Docker [Docker](https://www.docker.com/get-started).
 
 Usage: 
 
@@ -53,7 +53,7 @@ Usage:
 ## youtubedl.py
 This utility downloads video content referenced in tweet data, from over a thousand video providers. It also downloads JSON metadata for each video, and the transcript if one is available.
 
-The command line program _youtube-dl_ is needed to run this utility. See https://github.com/ytdl-org/youtube-dl.
+The command line program _youtube-dl_ is needed to run this utility. youtube-dl is detailed [here](https://github.com/ytdl-org/youtube-dl). 
 
 Usage: 
 
