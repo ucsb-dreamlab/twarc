@@ -65,7 +65,7 @@ User ids
 Screen name, user id
 User id, screen name
 
-For issues with the input file visit [here](https://github.com/DocNow/twarc/issues/233).
+For issues with the input file click [here](https://github.com/DocNow/twarc/issues/233).
 
 Usage: 
 
