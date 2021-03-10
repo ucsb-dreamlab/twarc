@@ -2,16 +2,17 @@
 date: 03/08/2021
 output: html
 ---
+# Visualization Utilities
 
 ##### Table of Contents  
-[geojson.py](#headers)  
+[geojson.py](#geojson.py)  
 [json2csv.py](#json2csv.py)  
 [network.py](#network.py)  
 [source.py](#source.py)  
 [wall.py](#wall.py)  
 [wordcloud.py](#wordcloud.py) 
 
-<a name="headers"/>
+<a name="geojson.py"/>
 
 ## geojson.py
 This utility outputs a GeoJSON file when geo spatial location is available containing the following attributes:
@@ -35,7 +36,9 @@ For help:
 
     python utils/geojson.py -h
 
-The best way to visualize what this is doing, is to use a geojson chrome extension or geojson reader. One options is: https://chrome.google.com/webstore/detail/geojson-map-viewer-with-d/hcfcnnifdgkogkjjlkpdcfalegleggdg?hl=en-US 
+The best way to visualize what this is doing, is to use a geojson chrome extension or [geojson reader](https://chrome.google.com/webstore/detail/geojson-map-viewer-with-d/hcfcnnifdgkogkjjlkpdcfalegleggdg?hl=en-US). 
+
+<a name="json2csv.py"/>
 
 ## json2csv.py
 This utility converts a json to a csv to be easily read.
@@ -54,6 +57,8 @@ Arguments:
 For help: 
 
     python utils/json2csv.py -h
+
+<a name="network.py"/>
 
 ## network.py
 This utility creates a network of tweets : static D3 visualization
@@ -76,12 +81,16 @@ For help:
 
     python utils/network.py -h
     
+<a name="source.py"/>
+    
 ## source.py
 This utility creates a list of client sources most used and outputs a list with each source and the corresponding number of times it was used. 
 
 Usage: 
 
     python utils/source.py tweets.jsonl > sources.html
+
+<a name="wall.py"/>
 
 ## wall.py
 This utility creates a rudimentary wall of tweets.
@@ -93,6 +102,8 @@ Usage:
 To put the tweets on the wall in chronological order: 
 
     % tail -r tweets.jsonl | ./wall.py > wall.html 
+
+<a name="wordcloud.py"/>
 
 ## wordcloud.py
 This utility creates a wordcloud of the tweets, accounting for stop words (i.e. “and”, “the”, “to”, etc.). 
