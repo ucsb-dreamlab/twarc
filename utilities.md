@@ -11,7 +11,7 @@ output: html
 [Status](#status)  
 [Organization](#organization)  
 [System](#system)  
-[Extra Resources](#extra resources) 
+[Resources](#resources) 
 
 Here are the python utilities accessible with twarc. Every section (except for Extra Resources) links to a new page containing the python utilities listed below it. These pages can be accessed by clicking on the blue headings below. 
   
@@ -78,7 +78,7 @@ Here are the python utilities accessible with twarc. Every section (except for E
 ## [Worked Example](workedex.md)
   - Here you'll find a worked example of all the utilities listed above. 
 
-## Extra Resources
+## Resources
   - For Twarc Setup and basics click [here](https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html) and/or [here](https://github.com/DocNow/twarc)
   - MAC terminal command [cheat sheet](https://www.makeuseof.com/tag/mac-terminal-commands-cheat-sheet/) 
   - Windows command prompt [cheat sheet](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf)
