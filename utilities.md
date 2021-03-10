@@ -12,7 +12,7 @@ output: html
 [Extra Resources](#extraresources) 
 
 Here is where the intro to utilities will go.
-...snip...   
+  
 <a name="headers"/>
 ## [Filtering](filtering.md)
   - deduplicate.py: filters out duplicate ids from tweets
