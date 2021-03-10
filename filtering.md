@@ -24,7 +24,7 @@ This utility removes tweets with duplicate IDs. According to the Twitter documen
 
 Usage:
 
-    python utils/deduplicate.py tweets.jsonl > deduped.jsonl
+    python utils/deduplicate.py tweets.jsonl > deduplicate.jsonl
     
 Arguments: 
 
@@ -109,7 +109,7 @@ This utility filters tweets and retweets based on the presence or absence of geo
 
 Usage: 
 
-    python utils/geo.py tweets.jsonl > tweets_geo.jsonl
+    python utils/geo.py tweets.jsonl > geo.jsonl
 
 Output is a JSON of tweets that have geocoding (no option for the negative -- i.e. tweets without geocoding). Specification of an output file is not necessary, however, without specification, output will be printed to the cmd. 
 
@@ -124,7 +124,7 @@ Before use:
     
 Usage: 
 
-    python utils/geofilter.py tweets.jsonl --yes-coordinates > tweets_with_geocoords.jsonl
+    python utils/geofilter.py tweets.jsonl --yes-coordinates > geofilter.jsonl
     
 Arguments: 
 
@@ -147,7 +147,7 @@ In just about every dataset, the retweets will far outnumber the original tweets
 
 Usage:
 
-    python utils/noretweets.py tweets.jsonl > tweets_noretweets.jsonl
+    python utils/noretweets.py tweets.jsonl > noretweets.jsonl
  
 Output is a JSON file containing the original data without the retweets. Specification of an output file is not necessary, however, without specification, output will be printed to the cmd.
 
@@ -158,7 +158,7 @@ Twitter’s Media Settings page defines sensitive tweets as content that others 
 
 Usage: 
 
-    python utils/sensitive. py tweets.jsonl > sensitive_tweets.jsonl
+    python utils/sensitive. py tweets.jsonl > sensitive.jsonl
     
 Specification of an output file is not necessary, however, without specification, output will be printed to the cmd.
 
