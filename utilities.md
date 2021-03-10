@@ -10,7 +10,7 @@ output: html
 [Visualization](#visualization)  
 [Status](#status)  
 [Organization](#organization)  
-[System](#system) 
+[System](#system)  
 [Extra Resources](#extraresources) 
 
 Here are the python utilities accessible with twarc. Every section (except for Extra Resources) links to a new page containing the python utilities listed below it. These pages can be accessed by clicking on the blue headings below. 
