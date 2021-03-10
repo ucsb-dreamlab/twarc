@@ -2,14 +2,15 @@
 date: 03/08/2021
 output: html
 ---
+# Organization Utilities
 
 ##### Table of Contents  
-[sort_by_id.py](#headers)  
+[sort_by_id.py](#sort_by_id.py)  
 [unshrtn.py](#unshrtn.py)  
-[urls.py](#urls.py )  
+[urls.py](#urls.py)  
 [youtubedl.py](#youtubedl.py)  
 
-<a name="headers"/>
+<a name="sort_by_id.py"/>
 
 ## sort_by_id.py
 This utility sorts tweet ids into chronological ascending order(i.e. sorting tweets by creation date). 
@@ -17,6 +18,8 @@ This utility sorts tweet ids into chronological ascending order(i.e. sorting twe
 Usage: 
 
     python utils/sort_by_id.py tweets.jsonl > sort_by_id.jsonl
+
+<a name="unshrtn.py"/>
 
 ## unshrtn.py
 This utility unshortens urls. The microservice _unshrtn_ is needed to run this utility. It’s best run with Docker https://www.docker.com/get-started -> https://github.com/DocNow/unshrtn.
@@ -36,12 +39,16 @@ For help:
 
     python utils/unshrtn.py -h
 
+<a name="urls.py"/>
+
 ## urls.py
 This utility takes the unshortened JSON and prints out each url.
 
 Usage: 
 
     cat unshortn.jsonl | utils/urls.py | sort | uniq -c | sort -nr > urls.txt
+
+<a name="youtubedl.py"/>
 
 ## youtubedl.py
 This utility downloads video content referenced in tweet data, from over a thousand video providers. It also downloads JSON metadata for each video, and the transcript if one is available.
