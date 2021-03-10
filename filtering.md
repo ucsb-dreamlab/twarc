@@ -4,11 +4,6 @@ output: html
 ---
 # Filtering Utilities
   
-<a name="headers"/>
-
-## [Filtering](filtering.md)
-
-
 ##### Table of Contents  
 [deduplicate.py](#headers)  
 [filter_date.py](#filter_date.py)  
