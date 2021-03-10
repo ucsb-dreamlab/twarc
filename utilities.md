@@ -5,7 +5,7 @@ output: html
 # Twarc Utilities
 
 ##### Table of Contents  
-[Filtering](#headers)  
+[Filtering](#filtering)  
 [Extraction](#extraction)  
 [Visualization](#visualization)  
 [Status](#status)  
