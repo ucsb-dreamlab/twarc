@@ -34,7 +34,7 @@ Specification of an output file is not necessary, however, without specification
 <a name="emojis.py"/>
 
 ## emojis.py
-This utility creates a text file with all the emojis in the data with the number of times each emoji has been used. Note: emojis and non-Latin characters may not render well because of certain UTF-8 characters, particularly in Windows. To fix this you can follow the directions here: https://scholarslab.github.io/learn-twarc/08-win-region-settings .
+This utility creates a text file with all the emojis in the data with the number of times each emoji has been used. Note: emojis and non-Latin characters may not render well because of certain UTF-8 characters, particularly in Windows. To fix this you can follow the directions [here](https://scholarslab.github.io/learn-twarc/08-win-region-settings).
 
 Usage: 
 
@@ -76,7 +76,7 @@ For help:
 <a name="flakey.py"/>
 
 ## flakey.py
-This utility takes Snowflake ids (tweet ids) and extracts their creation times to a csv. More information about Snowflake ids and deleted tweets can be found here: https://ws-dl.blogspot.com/2019/08/2019-08-03-searching-web-archives-for.html 
+This utility takes Snowflake ids (tweet ids) and extracts their creation times to a csv. More information about Snowflake ids and deleted tweets can be found  [here](https://ws-dl.blogspot.com/2019/08/2019-08-03-searching-web-archives-for.html)
 
 Usage:
 
@@ -96,7 +96,7 @@ Specification of an output file is not necessary, however, without specification
 <a name="media2warc.py"/>
 
 ## media2warc.py
-This utility extracts media urls from tweet json.gz and saves them as warc records. Warcio (https://github.com/webrecorder/warcio) is a dependency and before you can use it, you need to issue the following command:
+This utility extracts media urls from tweet json.gz and saves them as warc records. [Warcio](https://github.com/webrecorder/warcio) is a dependency and before you can use it, you need to issue the following command:
 
     % pip install warcio
 
