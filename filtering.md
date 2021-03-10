@@ -36,6 +36,7 @@ For help:
     
 Output is a JSON containing the tweets without duplicate ids (i.e. the same tweet). Specification of an output file is not necessary, however, without specification, output will be printed to the cmd.  
 
+<a name="filter_date.py"/>
 
 ## filter_date.py
 This utility filters out all tweets after min and/or max date given. 
