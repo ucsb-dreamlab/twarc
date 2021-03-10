@@ -11,7 +11,7 @@ output: html
 [System](#system) 
 [Extra Resources](#extraresources) 
 
-Here is where the intro to utilities will go.
+Here are the python utilities accessible with twarc. Every section (except for Extra Resources) links to a new page containing the python utilities listed below it. These pages can be accessed by clicking on blue headings below. 
   
 <a name="headers"/>
 
@@ -74,5 +74,9 @@ Here is where the intro to utilities will go.
   - validate.py: removes unused imports
 
 ## Extra Resources
-* You will need a nicely formatted list of all 47.
-*   list don't forget your categories.
+  - For Twarc Setup and basics visit https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html  and/or https://github.com/DocNow/twarc  
+  - MAC terminal command cheat sheet: https://www.makeuseof.com/tag/mac-terminal-commands-cheat-sheet/  
+  - Windows command prompt cheat sheet: chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf 
+  - Windows powershell can be found in the microsoft store for free. Information and why you might want to download it: https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1  
+  - Linux command line cheat sheet: https://cheatography.com/davechild/cheat-sheets/linux-command-line/ 
+  - JSON Chrome viewer extension: https://chrome.google.com/webstore/detail/json-viewer/aimiinbnnkboelefkjlenlgimcabobli?hl=en-US  
