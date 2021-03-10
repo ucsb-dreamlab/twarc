@@ -56,6 +56,8 @@ For help:
     
 Output is a JSON of tweets within the given min and/or max date(s) given. Specification of an output file is not necessary, however, without specification, output will be printed to the cmd. 
 
+<a name="filter_users.py"/>
+
 ## filter_users.py 
 This utility filters tweets posted by a list of users. The list should be supplied in a file which can contain the following, each on a separate line:
 Screen names
@@ -79,6 +81,8 @@ For help:
     
 Output is a JSON of tweets made by those users as supplied in the data file . Specification of an output file is not necessary, however, without specification, output will be printed to the cmd.  
 
+<a name="gender.py"/>
+
 ## gender.py 
 This utility filters tweets based on Twitter's guess about the gender of the user. 
 
@@ -98,6 +102,8 @@ For help:
 
 Output is a JSON of tweets filtered by specified gender. Specification of an output file is not necessary, however, without specification, output will be printed to the cmd. 
 
+<a name="geo.py"/>
+
 ## geo.py 
 This utility filters tweets and retweets based on the presence or absence of geocoding. 
 
@@ -106,6 +112,8 @@ Usage:
     python utils/geo.py tweets.jsonl > tweets_geo.jsonl
 
 Output is a JSON of tweets that have geocoding (no option for the negative -- i.e. tweets without geocoding). Specification of an output file is not necessary, however, without specification, output will be printed to the cmd. 
+
+<a name="geofilter.py"/>
 
 ## geofilter.py 
 This utility filters tweets by presence or absence of geo coordinates. 
@@ -132,6 +140,8 @@ For help:
     
 Specification of an output file is not necessary, however, without specification, output will be printed to the cmd.
 
+<a name="noretweets.py"/>
+
 ## noretweets.py
 In just about every dataset, the retweets will far outnumber the original tweets. This utility removes those retweets from the data. 
 
@@ -141,6 +151,8 @@ Usage:
  
 Output is a JSON file containing the original data without the retweets. Specification of an output file is not necessary, however, without specification, output will be printed to the cmd.
 
+<a name="sensitive.py"/>
+
 ## sensitive.py 
 Twitter’s Media Settings page defines sensitive tweets as content that others may not wish to see such as violence or nudity. The API creates a variable in the metadata called “possibly_sensitive” representing a BOOLEAN value of TRUE or FALSE (where TRUE means the tweets IS possibly sensitive). This utility filters tweets based on the presence or absence of sensitive tweets. 
 
@@ -149,6 +161,8 @@ Usage:
     python utils/sensitive. py tweets.jsonl > sensitive_tweets.jsonl
     
 Specification of an output file is not necessary, however, without specification, output will be printed to the cmd.
+
+<a name="search.py"/>
 
 ## search.py 
 Filters tweet JSON based on a regular expression to apply to the test of the tweet. (The regular expression in the usage example below is ‘today’)
@@ -166,6 +180,8 @@ Arguments:
     python utils/search.py today -h
 
 Specification of an output file is not necessary, however, without specification, output will be printed to the cmd
+
+<a name="twarc-archive.py"/>
 
 ## twarc-archive.py 
 Uses twarc to write Twitter search results to a directory of your choosing. Uses previous results to determine when to stop searching. For example, when you want to output search results for tweets mentioning “ferguson” to the directory /mnt/tweets/ferguson 
@@ -188,6 +204,8 @@ For help:
     python utils/twarc-archive.py -h
     
 The first run will search twitter for tweets matching “ferguson” and write them to a file /mnt/tweets/ferguson/tweets-001.jsonl.gz. The second run will get the first tweet id in the output file and use it to write another file including any new tweet since that tweet.
+
+<a name="webarchives.py"/>
 
 ## webarchives.py 
 
