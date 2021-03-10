@@ -2,6 +2,7 @@
 date: 03/02/2021
 output: html
 ---
+# Filtering Utilities
 
 ##### Table of Contents  
 [deduplicate.py](#headers)  
@@ -15,7 +16,6 @@ output: html
 [search.py](#search.py)  
 [twarc-archive.py](#twarc-archive.py) 
 [webarchives.py](#webarchives.py) 
-
 
 <a name="headers"/>
  
