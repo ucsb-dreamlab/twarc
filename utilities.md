@@ -73,6 +73,9 @@ Here are the python utilities accessible with twarc. Every section (except for E
   - remove_limit.py: removes limit warnings from API
   - validate.py: removes unused imports
 
+## [Worked Example](workedex.md)
+  - Here you'll find a worked example of all the utilities listed above. 
+
 ## Extra Resources
   - For Twarc Setup and basics visit https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html  and/or https://github.com/DocNow/twarc  
   - MAC terminal command cheat sheet: https://www.makeuseof.com/tag/mac-terminal-commands-cheat-sheet/  
