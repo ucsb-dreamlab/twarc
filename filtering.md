@@ -5,13 +5,13 @@ output: html
 # Filtering Utilities
   
 ##### Table of Contents  
-[deduplicate.py](#headers)  
+[deduplicate.py](#deduplicate.py)    
 [filter_date.py](#filter_date.py)  
-[filter_users.py](#filter_users.py)    
+[filter_users.py](#filter_users.py)      
 [gender.py](#gender.py)  
 [geo.py](#geo.py)  
-[geofilter.py](#geofilter.py)  
-[noretweets.py](#noretweets.py)  
+[geofilter.py](#geofilter.py)   
+[noretweets.py](#noretweets.py)    
 [sensitive.py](#sensitive.py)  
 [search.py](#search.py)  
 [twarc-archive.py](#twarc-archive.py)  
