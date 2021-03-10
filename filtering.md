@@ -3,6 +3,11 @@ date: 03/02/2021
 output: html
 ---
 # Filtering Utilities
+  
+<a name="headers"/>
+
+## [Filtering](filtering.md)
+
 
 ##### Table of Contents  
 [deduplicate.py](#headers)  
