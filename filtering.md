@@ -17,7 +17,7 @@ output: html
 [twarc-archive.py](#twarc-archive.py)  
 [webarchives.py](#webarchives.py)  
 
-<a name="headers"/>
+<a name="deduplicate.py"/>
  
 ## deduplicate.py
 This utility removes tweets with duplicate IDs. According to the Twitter documentation, duplicate tweet ids are possible for tweets collected from the Twitter filter stream. 
