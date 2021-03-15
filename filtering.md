@@ -2,8 +2,7 @@
 date: 03/02/2021
 output: html
 ---
-[Return to Utilities Page](utilities.md)                                                                                         [Extraction Utilities >>>](extraction.md)
-
+[Utilities Home Page](utilities.md) • [Extraction Utilities](extraction.md) •
 
 # Filtering Utilities
   
