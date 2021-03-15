@@ -11,11 +11,12 @@ output: html
 [Status](#status)  
 [Organization](#organization)  
 [System](#system)  
+[Worked Example](#worked)  
 [Resources](#resources) 
 
 Here are the python utilities accessible with twarc. Every section (except for Resources) links to a new page containing the python utilities listed below it. These pages can be accessed by clicking on the blue headings below. 
   
-<a name="headers"/>
+<a name="filtering"/>
 
 ## [Filtering](filtering.md)
   - deduplicate.py: filters out duplicate ids from tweets
@@ -29,6 +30,8 @@ Here are the python utilities accessible with twarc. Every section (except for R
   - search.py: filters tweets by regular expression given
   - twarc-archive.py: filters tweets by specific word supplied
   - webarchives.py: filters tweets by presence or absence of webarchive
+
+<a name="extraction"/>
 
 ## [Extraction](extraction.md)
   - embeds.py: extracts list of media urls
@@ -46,6 +49,8 @@ Here are the python utilities accessible with twarc. Every section (except for R
   - tweet_urls.py: extracts urls
   - users.py: extracts user names/screen names
 
+<a name="visualization"/>
+
 ## [Visualization](visualization.md)
   - geojson.py: creates a geojson file that can be used for geo visualization
   - json2csv.py: creates a csv of tweets
@@ -53,6 +58,8 @@ Here are the python utilities accessible with twarc. Every section (except for R
   - source.py: creates a page of which twitter client sources are msot used
   - wall.py: creates a wall of tweets
   - wordcloud.py: creates a wordcloud of tweets
+
+<a name="status"/>
 
 ## [Status](status.md)
   - deleted.py: checks the status of each tweet, outputting tweets that have been deleted
@@ -64,19 +71,27 @@ Here are the python utilities accessible with twarc. Every section (except for R
   - tweet_compliance.py: provides most recent version of a tweet, if it exists
   - wayback.py: reads stream of tweets and checks whether that tweet is archived at Internet Archive
 
+<a name="organization"/>
+
 ## [Organization](organization.md)
   - sort_by_id.py: sorts tweets by id
   - unshrtn.py: unshortens urls 
   - urls.py: takes unshorted urls and prints them out
   - youtubedl.py: uses youtube-dl to download video content in tweets
- 
+
+<a name="system"/>
+
 ## [System](system.md)
   - auth_timing.py: allows search 450 requests every 15 minutes, and User Auth contexts at 180 requests per 15 minutes
   - remove_limit.py: removes limit warnings from API
   - validate.py: removes unused imports
 
+<a name="worked"/>
+
 ## [Worked Example](workedex.md)
   - Here you'll find a worked example of all the utilities listed above. 
+
+<a name="resources"/>
 
 ## Resources
   - For Twarc Setup and basics click [here](https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html) and/or [here](https://github.com/DocNow/twarc)
