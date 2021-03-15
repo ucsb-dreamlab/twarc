@@ -4,6 +4,13 @@ output: html
 ---
 [Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md)
 
+##### Table of Contents  
+[Intro](#intro) 
+[Prepping the Data](#prep)  
+[Filtering the Data](#filter)  
+
+<a name="intro"/>
+
 # Worked Example
 
 For the worked example, we will run through the [2019 Nipsey Hussle Funeral Tweets](https://archive.org/details/nipsey-hustle-tweets). The tweet ids are available under Downloadable Options on the right-hand side of the page and are named nipsey-ids.txt.gz. (Note: The extension .gz is a file format and software application used for file compression and decompression. If you don't know how to open this type of file or are having trouble doing so, visit Utilities Home and scroll to Resources). 
@@ -11,12 +18,6 @@ For the worked example, we will run through the [2019 Nipsey Hussle Funeral Twee
 If you have not downloaded Twarc, do so at the [Twarc Doc Now](https://github.com/DocNow/twarc). For a more non-technical-user download, visit [scholarslab](https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html). Once Twarc is downloaded, be sure to start the twarc session. 
 
 You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. 
-
-##### Table of Contents  
-[Prepping the Data](#prep)  
-[Filtering the Data](#filter)  
-
-
   
 <a name="prep"/>
 
