@@ -89,7 +89,7 @@ Here are the python utilities accessible with twarc. Every section (except for R
 <a name="worked"/>
 
 ## [Worked Example](workedex.md)
-  - Here you'll find a worked example of all the utilities listed above. 
+  - Here you'll find a worked example of all the utilities listed above using the Nispey Hussle Funeral data. 
 
 <a name="resources"/>
 
