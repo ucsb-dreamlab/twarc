@@ -1,5 +1,5 @@
 ---
-date: 03/15/2021
+date: 2021-03-15
 output: html
 ---
 [Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md)
@@ -36,3 +36,5 @@ Next we will need to rehydrate the dataset. This can be done using the following
 <a name="filter"/>
 
 ## Filtering the Data 
+
+It's important to work with clean data. 
