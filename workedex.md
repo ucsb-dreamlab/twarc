@@ -17,8 +17,8 @@ For the worked example, we will run through the [2019 Nipsey Hussle Funeral Twee
 
 If you have not downloaded Twarc, do so at the [Twarc Doc Now](https://github.com/DocNow/twarc). For a more non-technical-user download, visit [scholarslab](https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html). Once Twarc is downloaded, be sure to start the twarc session. 
 
-You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. 
-  
+You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. Revisit the utility page corresponding to each section for in-depth explanation of each utility. 
+
 <a name="prep"/>
 
 ## Prepping the Data
@@ -37,4 +37,8 @@ Next we will need to rehydrate the dataset. This can be done using the following
 
 ## Filtering the Data 
 
-It's important to work with clean data. 
+We'd like to start out by removing duplicate ids from our dataset using _deduplicate.py_.
+
+    python utils/deduplicate.py nh_sub_tweets.jsonl > nh_sub_deduplicate.jsonl
+
+
