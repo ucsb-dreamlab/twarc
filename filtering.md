@@ -19,6 +19,8 @@ output: html
 [twarc-archive.py](#twarc-archive.py)  
 [webarchives.py](#webarchives.py)  
 
+It's a good practice to clean your data before analyzing. These utilities allow you to remove duplicates and retweets, and to filter the data based on your own specifications.  
+
 <a name="deduplicate.py"/>
  
 ## deduplicate.py
