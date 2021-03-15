@@ -5,7 +5,7 @@ output: html
 [Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md)
 
 ##### Table of Contents  
-[Intro](#intro) 
+[Intro](#intro)  
 [Prepping the Data](#prep)  
 [Filtering the Data](#filter)  
 
