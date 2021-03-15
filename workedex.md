@@ -26,6 +26,6 @@ Next we will need to rehydrate the dataset. This can be done using the following
 
     twarc hydrate nh_ids.txt > nh_tweets.jsonl
     
-*Note: If an account or tweet has been deleted from Twitter, it cannot be rehydrated. We will discuss this more later on
+*Note: If an account or tweet has been deleted from Twitter, it cannot be rehydrated. We will discuss this more later on*
 
 
