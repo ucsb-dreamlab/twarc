@@ -25,7 +25,7 @@ You are encouraged, but not required, to try out these utilities on your own bef
 
 The first step will be to unzip out dataset. It should unzip to a txt file titled ids.txt. For organizational purposes, we will rename this file nh_ids.txt for Nispey Hussle. You can keep the name ids.txt or modify it to fit your needs.
 
-There are 11,642,103 ids listed in ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python code to do this. Click 'View on Github' at the top of this page or visit the [ucsb-collaboratory twarc repository](https://github.com/ucsb-collaboratory/twarc) to download the file subset.py. Once downloaded, simply run subset.py to appy it to your ids file. You can alter the length of the subset by changing the variable x. The outputted file is titled nh_sub_ids.txt. 
+There are 11,642,103 ids listed in ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python code to do this. Click 'View on Github' at the top of this page or visit the [ucsb-collaboratory twarc repository](https://github.com/ucsb-collaboratory/twarc) to download the file subset.py. Once downloaded, simply run subset.py to appy it to your ids file. You can alter the length of the subset by changing the value of i. The outputted file is titled nh_sub_ids.txt. 
 
 Next we will need to rehydrate the dataset. This can be done using the following command:
 
@@ -39,6 +39,12 @@ Next we will need to rehydrate the dataset. This can be done using the following
 
 We'd like to start out by removing duplicate ids from our dataset using _deduplicate.py_.
 
-    python utils/deduplicate.py nh_sub_tweets.jsonl > nh_sub_deduplicate.jsonl
+    python utils/deduplicate.py --extract-retweets nh_sub_tweets.jsonl > nh_sub_deduplicate.jsonl
+
+We want to look at tweets that were made the day of Nipsey Hussle's funeral (April 12th, 2019) and the days following. We can do so using _filter_date.py_.
+
+    python utils/filter_date.py --mindate 12-april-2019 nh_sub_tweets.jsonl > nh_sub_filter_date.jsonl
+
+
 
 
