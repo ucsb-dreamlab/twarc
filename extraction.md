@@ -234,3 +234,4 @@ Use bash to count unique users:
 
     sort users.txt | uniq -c | (sort gives you a list of IDs sorted by how many tweets are in your dataset.)
         
+[Back To Top](#extraction-utilities)
