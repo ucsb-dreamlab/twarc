@@ -64,10 +64,10 @@ Output is a JSON of tweets within the given min and/or max date(s) given. Specif
 
 ## filter_users.py 
 This utility filters tweets posted by a list of users. The list should be supplied in a file which can contain the following, each on a separate line:
-Screen names
-User ids
-Screen name, user id
-User id, screen name
+Screen names  
+User ids  
+Screen name, user id  
+User id, screen name  
 
 For issues with the input file click [here](https://github.com/DocNow/twarc/issues/233).
 
