@@ -93,6 +93,15 @@ _webarchives.py_
 
 ## Extracting the Data
 
+_embeds.py_
+
+    python utils/embeds.py nh_sub_dod.jsonl > nh_sub_embeds.txt
+    
+_emojis.py_    
+    
+    python utils/emojis.py nh_sub_dod.jsonl > nh_sub_emojis.txt
+    
+
 <a name="visual"/>
 
 ## Visualizing the Data
