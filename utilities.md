@@ -100,3 +100,6 @@ Here are the python utilities accessible with twarc. Every section (except for R
   - Windows powershell can be found in the microsoft store for free. [This](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1) is a good resource on powershell and why you might want to download it. 
   - Linux command line [cheat sheet](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
   - JSON Chrome viewer [extension](https://chrome.google.com/webstore/detail/json-viewer/aimiinbnnkboelefkjlenlgimcabobli?hl=en-US)
+
+
+[Back to top](#twarc-utilities)
