@@ -7,12 +7,12 @@ output: html
 ##### Table of Contents  
 [Intro](#intro)  
 [Prepping the Data](#prep)  
-[Filtering the Data](#filter) 
-[Extracting Data](#extract) 
-[Visualizing the Data](#visual) 
-[Getting the Status of the Data](#status)
-[Organzing the Data](#organize) 
-[Checking Your System](#system) 
+[Filtering the Data](#filter)  
+[Extracting Data](#extract)  
+[Visualizing the Data](#visual)  
+[Getting the Status of the Data](#status)  
+[Organzing the Data](#organize)  
+[Checking Your System](#system)  
 
 <a name="intro"/>
 
