@@ -114,3 +114,6 @@ This utility creates a wordcloud of the tweets, accounting for stop words (i.e. 
 Usage: 
 
     python utils/wordcloud.py tweets.jsonl > wordcloud.html
+
+
+[Back To Top](#visualization-utilities)
