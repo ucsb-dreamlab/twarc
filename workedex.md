@@ -9,6 +9,10 @@ output: html
 [Prepping the Data](#prep)  
 [Filtering the Data](#filter) 
 [Extracting Data](#extract) 
+[Visualizing the Data](#visual) 
+[Getting the Status of the Data](#status)
+[Organzing the Data](#organize) 
+[Checking Your System](#system) 
 
 <a name="intro"/>
 
@@ -48,10 +52,62 @@ Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 
 
     python utils/filter_date.py --mindate 31-march-2019 nh_sub_dedup.jsonl > nh_sub_dod.jsonl
     
+----------------------------------------------------------------------------UNDER CONSTRUCTION-----------------------------------------------------------------------------------  
+_filter_users.py_
+   
+    python utils/filter_users.py nh_sub_sn.txt > nh_sub_users.jsonl
+    
+_gender.py__
+
+    python utils/gender.py --gender female tweets.jsonl | utils/wordcloud.py > tweets-female.html python utils/gender.py --gender [male|female|unknown] tweet_file *
+    
 Now we're going to filter based on the presence of geo coordinates _geo.py_. 
 
     python utils/geo.py nh_sub_dod.jsonl > nh_sub_geo.jsonl
     
+_geo.py_ 
+
+    python utils/geofilter.py nh_sub_dod.jsonl --no-coordinates > nh_sub_geofilter.jsonl
+    
+_noretweets.py_
+
+    python utils/noretweets.py nh_sub_dod.jsonl > nh_sub_noretweets.jsonl
+    
+_sensitive.py_
+    
+    python utils/sensitive.py nh_sub_dod.jsonl > nh_sub_sensitive.jsonl
+    
+_search.py_
+
+    python utils/search.py rip nh_sub_dod.jsonl > nh_sub_search.txt
+    
+_twarc-archive.py_
+
+    % twarc-archive.py rip /user/tweets/rip
+    
+_webarchives.py_
+
+    python utils/webarchives.py nh_sub_dod.jsonl
+
 <a name="extract"/>
 
 ## Extracting the Data
+
+<a name="visual"/>
+
+## Visualizing the Data
+
+<a name="status"/>
+
+## Getting the Status the Data
+
+<a name="organize"/>
+
+## Organizing the Data
+
+<a name="system"/>
+
+## Checking Your System
+
+
+[Back To Top](#worked-example)
