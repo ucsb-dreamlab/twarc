@@ -47,12 +47,12 @@ This utility filters out all tweets after min and/or max date given.
 
 Usage: 
 
-    python utils/filter_date.py --mindate 1-may-2014 tweets.jsonl > filtered.jsonl
+    python utils/filter_date.py tweets.jsonl > filtered.jsonl
     
 Arguments: 
 
-    --mindate (provide mindate of tweets),
-    --maxdate (provide max date of tweets) 
+    --mindate day-month-year (provide mindate of tweets with month spelled out),
+    --maxdate day-month-year (provide max date of tweets with month spelled out) 
     
 For help:
 
@@ -128,7 +128,7 @@ Before use:
     
 Usage: 
 
-    python utils/geofilter.py tweets.jsonl --yes-coordinates > geofilter.jsonl
+    python utils/geofilter.py tweets.jsonl > geofilter.jsonl
     
 Arguments: 
 
