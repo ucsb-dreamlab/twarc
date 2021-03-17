@@ -153,17 +153,48 @@ _users.py_
 
 ## Visualizing the Data
 
+    python utils/geojson.py tweets.jsonl > tweets.geojson
+    python utils/geojson.py -h
+    python utils/json2csv.py tweets.jsonl > tweets.csv
+    python utils/json2csv.py -h
+    python utils/network.py tweets.jsonl network.html
+    python utils/network.py -h
+    python utils/source.py tweets.jsonl > sources.html
+    python utils/wall.py tweets.jsonl > wall.html
+    python utils/wordcloud.py tweets.jsonl > wordcloud.html
+
 <a name="status"/>
 
 ## Getting the Status the Data
+
+    python utils/deleted.py tweets.jsonl > deleted.jsonl
+    python utils/deletes.py tweet.jsonl > deletes.jsonl
+    python utils/deleted_users.py tweets.jsonl > deleted_users.jsonl
+    python utils/foaf.py 2267720350
+    python utils/foaf.py -h
+    python utils/oembeds.py election.jsonl > oembeds.jsonl
+    python utils/tweet.py 795847322957512704 > tweet.jsonl
+    python utils/tweet.py -h
+    python utils/tweet_compliance.py test.txt > test.json 2> test_delete.txt
+    python utils/wayback.py tweets.jsonl > wayback.txt
 
 <a name="organize"/>
 
 ## Organizing the Data
 
+    python utils/sort_by_id.py tweets.jsonl > sort_by_id.jsonl
+    cat tweets.jsonl | utils/unshrtn.py > unshortn.jsonl
+    python utils/unshrtn.py -h
+    cat unshortn.jsonl | utils/urls.py | sort | uniq -c | sort -nr > urls.txt
+    python utils/youtubedl.py election.json
+    python utils/youtubedl.py -h
+
 <a name="system"/>
 
 ## Checking Your System
 
+    python utils/auth_timing.py tweets.jsonl 
+    python utils/remove_limit.py tweets.jsonl > tweets_no_warnings.jsonl
+    python utils/validate.py election.json
 
 [Back To Top](#worked-example)
