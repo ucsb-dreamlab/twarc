@@ -162,7 +162,7 @@ Twitter’s Media Settings page defines sensitive tweets as content that others 
 
 Usage: 
 
-    python utils/sensitive. py tweets.jsonl > sensitive.jsonl
+    python utils/sensitive.py tweets.jsonl > sensitive.jsonl
     
 Specification of an output file is not necessary, however, without specification, output will be printed to the cmd.
 
