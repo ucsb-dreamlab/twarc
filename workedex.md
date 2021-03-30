@@ -155,11 +155,36 @@ _users.py_
 
 This section allows us to create visuals of the data. 
 
-### _geojson.py_
+#### _geojson.py_
 
-    python utils/geojson.py tweets.jsonl > tweets.geojson 
+We can use geojson.py to create a GeoJSON file when the geospatial location of a tweet is available.  
+
+
+    python utils/geojson.py nh_sub_tweets.jsonl > nh_sub_geojson.geojson 
+    
+We can then use a [GeoSpatial JSON reader](http://geojsonviewer.nsspot.net/) to visualize this file on the map.  
+    
+![Screenshot example](/assets/geojson.png)
+
+We can do further manipulation by creating a centroid instead of a bounding box.
+
+    python utils/geojson.py --centroid nh_sub_tweets.jsonl > nh_sub_centroid.geojson
+    
+![Screenshot example](/assets/centroid.png)
+
+Or we can add a random lon and lat shift to the bounding box centroids (0-0.1)
+
+    python utils/geojson.py --centroid --fuzz 0.01 nh_sub_tweets.jsonl > nh_sub_fuzz.geojson
+    
+![Screenshot example](/assets/fuzz.png)
+
+As we can see below, the shift is not too big.
+
+![Screenshot example](/assets/centroidvsfuzz.png)
+    
+*Warning about using geo location* DON"T FORGET TO UPDATE THIS
    
-_json2csv.py_
+#### _json2csv.py_
 
 We can view the tweets in a more cohesive manner by turning our json into a csv. This is done with the utility json2csv.py.
 
@@ -169,7 +194,7 @@ We can view the tweets in a more cohesive manner by turning our json into a csv.
     
  ![Screenshot example](/assets/json2csv.png)
     
-_network.py_
+#### _network.py_
 
     python utils/network.py nh_sub_tweets.jsonl nh_sub_network.html
     
@@ -181,7 +206,7 @@ We can click on the dots to see the individual tweets. The central node(red) is 
 
 We can move the cluster by clicking on one of the nodes and dragging it to the place on our screen we would like it to be. The bigger the data size, the longer it will take to mode the nodes around. There are also nodes not attached to the cluster. 
 
-_source.py_
+#### _source.py_
 
 We can create a page with the sources(ranked most to least) used with source.py.
 
@@ -191,7 +216,7 @@ We can create a page with the sources(ranked most to least) used with source.py.
 
 We can click on the links provided for each source to learn more about them. 
   
-_wall.py_
+#### _wall.py_
 
 We can also create a wall of tweets. 
 
@@ -199,14 +224,13 @@ We can also create a wall of tweets.
     
 ![Screenshot example](/assets/wall.png)
    
-_wordcloud.py_    
+#### _wordcloud.py_    
 
 The last visualization tool we'll go over is creating a wordcloud. 
     
     python utils/wordcloud.py nh_sub_tweets.jsonl > nh_sub_wordcloud.html
     
 ![Screenshot example](/assets/wordcloud.png)
-
 
 
 <a name="status"/>
