@@ -61,11 +61,11 @@ _gender.py__
 
     python utils/gender.py --gender female tweets.jsonl | utils/wordcloud.py > tweets-female.html python utils/gender.py --gender [male|female|unknown] tweet_file *
     
-Now we're going to filter based on the presence of geo coordinates _geo.py_. 
+_geo.py_ 
 
     python utils/geo.py nh_sub_dod.jsonl > nh_sub_geo.jsonl
     
-_geo.py_ 
+_geofilter.py_ 
 
     python utils/geofilter.py nh_sub_dod.jsonl --no-coordinates > nh_sub_geofilter.jsonl
     
@@ -153,48 +153,100 @@ _users.py_
 
 ## Visualizing the Data
 
+_geojson.py_
+
     python utils/geojson.py tweets.jsonl > tweets.geojson
-    python utils/geojson.py -h
+   
+_geojson.py_
+
     python utils/json2csv.py tweets.jsonl > tweets.csv
-    python utils/json2csv.py -h
+    
+_network.py_
+
     python utils/network.py tweets.jsonl network.html
-    python utils/network.py -h
+    
+_source.py_
+
     python utils/source.py tweets.jsonl > sources.html
+  
+_wall.py_
+
     python utils/wall.py tweets.jsonl > wall.html
+   
+_wordcloud.py_    
+    
     python utils/wordcloud.py tweets.jsonl > wordcloud.html
 
 <a name="status"/>
 
 ## Getting the Status the Data
 
+_deleted.py_
+
     python utils/deleted.py tweets.jsonl > deleted.jsonl
+    
+_deletes.py_    
+    
     python utils/deletes.py tweet.jsonl > deletes.jsonl
+    
+_deleted_users.py    
+    
     python utils/deleted_users.py tweets.jsonl > deleted_users.jsonl
+  
+_foaf.py  
+   
     python utils/foaf.py 2267720350
-    python utils/foaf.py -h
+
+_oembeds.py_
+    
     python utils/oembeds.py election.jsonl > oembeds.jsonl
+    
+_tweet.py_
+    
     python utils/tweet.py 795847322957512704 > tweet.jsonl
-    python utils/tweet.py -h
+    
+_tweet_compliance.py_
+    
     python utils/tweet_compliance.py test.txt > test.json 2> test_delete.txt
+    
+_wayback.py_
+    
     python utils/wayback.py tweets.jsonl > wayback.txt
 
 <a name="organize"/>
 
 ## Organizing the Data
 
+_sort_by_id.py_
+
     python utils/sort_by_id.py tweets.jsonl > sort_by_id.jsonl
+    
+_unshrtn.py_    
+    
     cat tweets.jsonl | utils/unshrtn.py > unshortn.jsonl
-    python utils/unshrtn.py -h
+    
+_urls.py_
+    
     cat unshortn.jsonl | utils/urls.py | sort | uniq -c | sort -nr > urls.txt
+   
+_youtubedl.py_
+   
     python utils/youtubedl.py election.json
-    python utils/youtubedl.py -h
 
 <a name="system"/>
 
 ## Checking Your System
 
+_auth_timing.py_
+
     python utils/auth_timing.py tweets.jsonl 
+    
+_remove_limit.py_
+    
     python utils/remove_limit.py tweets.jsonl > tweets_no_warnings.jsonl
+    
+_validate.py_   
+   
     python utils/validate.py election.json
 
 [Back To Top](#worked-example)
