@@ -200,8 +200,14 @@ We can also create a wall of tweets.
 ![Screenshot example](/assets/wall.png)
    
 _wordcloud.py_    
+
+The last visualization tool we'll go over is creating a wordcloud. 
     
-    python utils/wordcloud.py tweets.jsonl > wordcloud.html
+    python utils/wordcloud.py nh_sub_tweets.jsonl > nh_sub_wordcloud.html
+    
+![Screenshot example](/assets/wordcloud.png)
+
+
 
 <a name="status"/>
 
