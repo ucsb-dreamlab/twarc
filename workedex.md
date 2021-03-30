@@ -193,7 +193,11 @@ We can click on the links provided for each source to learn more about them.
   
 _wall.py_
 
-    python utils/wall.py tweets.jsonl > wall.html
+We can also create a wall of tweets. 
+
+    python utils/wall.py nh_sub_tweets.jsonl > nh_sub_wall.html
+    
+![Screenshot example](/assets/wall.png)
    
 _wordcloud.py_    
     
