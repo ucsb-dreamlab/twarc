@@ -18,6 +18,8 @@ output: html
 
 <a name="intro"/>
 
+----------------------------------------------------------------THIS PAGE IS CURRENTLY UNDER CONSTRUCTION------------------------------------------------------------------------ 
+
 For the worked example, we will run through the [2019 Nipsey Hussle Funeral Tweets](https://archive.org/details/nipsey-hustle-tweets). The tweet ids are available under Downloadable Options on the right-hand side of the page and are named nipsey-ids.txt.gz. (Note: The extension .gz is a file format and software application used for file compression and decompression. If you don't know how to open this type of file or are having trouble doing so, visit Utilities Home and scroll to Resources). 
 
 If you have not downloaded Twarc, do so at the [Twarc Doc Now](https://github.com/DocNow/twarc). For a more non-technical-user download, visit [scholarslab](https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html). Once Twarc is downloaded, be sure to start the twarc session. 
@@ -28,7 +30,7 @@ You are encouraged, but not required, to try out these utilities on your own bef
 
 ## Prepping the Data
 
-The first step will be to unzip out dataset. It should unzip to a txt file titled ids.txt. For organizational purposes, we will rename this file nh_ids.txt for Nispey Hussle. You can keep the name ids.txt or modify it to fit your needs.
+The first step will be to unzip our dataset. It should unzip to a txt file titled ids.txt. For organizational purposes, we will rename this file nh_ids.txt for Nispey Hussle. You can keep the name ids.txt or modify it to fit your needs.
 
 There are 11,642,103 ids listed in ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python code to do this. Click 'View on Github' at the top of this page or visit the [ucsb-collaboratory twarc repository](https://github.com/ucsb-collaboratory/twarc) to download the file subset.py. Once downloaded, simply run subset.py to appy it to your ids file. Look at the code documentation for more explanation of what it does and how it works. The outputted file is titled nh_sub_ids.txt. 
 
@@ -44,16 +46,19 @@ Next we will need to rehydrate the dataset. This can be done using the following
 
 Filtering the data can be seen as a way to clean the data before analysis.
 
+### _deduplicate.py_
+
 We'd like to start out by removing duplicate ids and retweets from our dataset using _deduplicate.py_.
 
     python utils/deduplicate.py --extract-retweets nh_sub_tweets.jsonl > nh_sub_dedup.jsonl
+    
+### _filter_date.py_
 
 Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 2019) and the days following. We can do so using _filter_date.py_.
 
     python utils/filter_date.py --mindate 31-march-2019 nh_sub_dedup.jsonl > nh_sub_dod.jsonl
     
-----------------------------------------------------------------------------UNDER CONSTRUCTION-----------------------------------------------------------------------------------  
-_filter_users.py_
+_filter_users.py_  (This requires use of another utility: .py)
    
     python utils/filter_users.py nh_sub_sn.txt > nh_sub_users.jsonl
     
@@ -160,27 +165,27 @@ This section allows us to create visuals of the data.
 We can use geojson.py to create a GeoJSON file when the geospatial location of a tweet is available.  
 
 
-    python utils/geojson.py nh_sub_tweets.jsonl > nh_sub_geojson.geojson 
+    python utils/geojson.py nh_sub_dod.jsonl > nh_dod_geojson.geojson 
     
 We can then use a [GeoSpatial JSON reader](http://geojsonviewer.nsspot.net/) to visualize this file on the map.  
     
-![Screenshot example](/assets/geojson.png)
+![Screenshot example](/assets/dod_geojson.png)
 
 We can do further manipulation by creating a centroid instead of a bounding box.
 
-    python utils/geojson.py --centroid nh_sub_tweets.jsonl > nh_sub_centroid.geojson
+    python utils/geojson.py --centroid nh_sub_dod.jsonl > nh_dod_centroid.geojson
     
-![Screenshot example](/assets/centroid.png)
+![Screenshot example](/assets/dod_centroid.png)
 
 Or we can add a random lon and lat shift to the bounding box centroids (0-0.1)
 
-    python utils/geojson.py --centroid --fuzz 0.01 nh_sub_tweets.jsonl > nh_sub_fuzz.geojson
+    python utils/geojson.py --centroid --fuzz 0.01 nh_sub_dod.jsonl > nh_dod_fuzz.geojson
     
-![Screenshot example](/assets/fuzz.png)
+![Screenshot example](/assets/dod_fuzz.png)
 
 As we can see below, the shift is not too big.
 
-![Screenshot example](/assets/centroidvsfuzz.png)
+![Screenshot example](/assets/dod_centroidvsfuzz.png)
     
 *Warning about using geo location* DON"T FORGET TO UPDATE THIS
    
@@ -190,19 +195,19 @@ We can view the tweets in a more cohesive manner by turning our json into a csv.
 
 *Note: if you're using Windows and you get a charmap error, change your Region settings using the instructions [here](https://scholarslab.github.io/learn-twarc/08-win-region-settings)*
 
-    python utils/json2csv.py nh_sub_tweets.jsonl > nh_sub_tweets.csv
+    python utils/json2csv.py nh_sub_dod.jsonl > nh_dod_tweets.csv
     
- ![Screenshot example](/assets/json2csv.png)
+ ![Screenshot example](/assets/dod_json2csv.png)
     
 ### _network.py_
 
-    python utils/network.py nh_sub_tweets.jsonl nh_sub_network.html
+    python utils/network.py nh_sub_dod.jsonl nh_dod_network.html
     
-![Screenshot example](/assets/network.png)
+![Screenshot example](/assets/dod_network.png)
 
 We can click on the dots to see the individual tweets. The central node(red) is the original tweet of a video interview. The connected nodes(yellow) are the replies and retweets to/of that video. The other nodes(gray) are attached by similarity to that central node and it's surrounding nodes. 
 
-![Screenshot example](/assets/network_video.gif)
+![Screenshot example](/assets/dod_network_video.gif)
 
 We can move the cluster by clicking on one of the nodes and dragging it to the place on our screen we would like it to be. The bigger the data size, the longer it will take to mode the nodes around. There are also nodes not attached to the cluster. 
 
@@ -210,9 +215,9 @@ We can move the cluster by clicking on one of the nodes and dragging it to the p
 
 We can create a page with the sources(ranked most to least) used with source.py.
 
-    python utils/source.py nh_sub_tweets.jsonl > nh_sub_source.html
+    python utils/source.py nh_sub_dod.jsonl > nh_dod_source.html
     
-![Screenshot example](/assets/source.png)
+![Screenshot example](/assets/dod_source.png)
 
 We can click on the links provided for each source to learn more about them. 
   
@@ -220,17 +225,17 @@ We can click on the links provided for each source to learn more about them.
 
 We can also create a wall of tweets. 
 
-    python utils/wall.py nh_sub_tweets.jsonl > nh_sub_wall.html
+    python utils/wall.py nh_sub_dod.jsonl > nh_dod_wall.html
     
-![Screenshot example](/assets/wall.png)
+![Screenshot example](/assets/dod_wall.png)
    
 ### _wordcloud.py_    
 
 The last visualization tool we'll go over is creating a wordcloud. 
     
-    python utils/wordcloud.py nh_sub_tweets.jsonl > nh_sub_wordcloud.html
+    python utils/wordcloud.py nh_sub_dod.jsonl > nh_dod_wordcloud.html
     
-![Screenshot example](/assets/wordcloud.png)
+![Screenshot example](/assets/dod_wordcloud.png)
 
 
 <a name="status"/>
