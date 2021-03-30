@@ -167,11 +167,19 @@ _json2csv.py_
 
     python utils/json2csv.py nh_sub_tweets.jsonl > nh_sub_tweets.csv
     
+ The outputted csv should look something like this:
  ![Screenshot example](/assets/json2csv.png)
     
 _network.py_
 
-    python utils/network.py tweets.jsonl network.html
+    python utils/network.py nh_sub_tweets.jsonl nh_sub_network.html
+    
+The outputted network should look something like this: 
+![Screenshot example](/assets/network.png)
+
+You can click on the dots to see the individual tweets.
+
+![Screenshot example](/assets/network_video.gif)
     
 _source.py_
 
