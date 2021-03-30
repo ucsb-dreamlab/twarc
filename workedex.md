@@ -153,13 +153,17 @@ _users.py_
 
 ## Visualizing the Data
 
+This section allows us to create visuals of the data. 
+
 _geojson.py_
 
     python utils/geojson.py tweets.jsonl > tweets.geojson
+    
+We can view the tweets in a more cohesive manner by turning our json into a csv. This is done with the utility json2csv. 
    
-_geojson.py_
+_json2csv.py_
 
-    python utils/json2csv.py tweets.jsonl > tweets.csv
+    python utils/json2csv.py nh_sub_tweets.jsonl > nh_sub_tweets.csv
     
 _network.py_
 
