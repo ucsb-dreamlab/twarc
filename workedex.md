@@ -163,7 +163,11 @@ We can view the tweets in a more cohesive manner by turning our json into a csv.
    
 _json2csv.py_
 
+*Note: if you're using Windows and you get a charmap error, change your Region settings using the instructions [here](https://scholarslab.github.io/learn-twarc/08-win-region-settings)
+
     python utils/json2csv.py nh_sub_tweets.jsonl > nh_sub_tweets.csv
+    
+    ![Screenshot example](/assets/json2csv.png)
     
 _network.py_
 
