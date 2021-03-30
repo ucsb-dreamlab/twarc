@@ -157,33 +157,39 @@ This section allows us to create visuals of the data.
 
 _geojson.py_
 
-    python utils/geojson.py tweets.jsonl > tweets.geojson
-    
-We can view the tweets in a more cohesive manner by turning our json into a csv. This is done with the utility json2csv. 
+    python utils/geojson.py tweets.jsonl > tweets.geojson 
    
 _json2csv.py_
 
-*Note: if you're using Windows and you get a charmap error, change your Region settings using the instructions [here](https://scholarslab.github.io/learn-twarc/08-win-region-settings)
+We can view the tweets in a more cohesive manner by turning our json into a csv. This is done with the utility json2csv.py.
+
+*Note: if you're using Windows and you get a charmap error, change your Region settings using the instructions [here](https://scholarslab.github.io/learn-twarc/08-win-region-settings)*
 
     python utils/json2csv.py nh_sub_tweets.jsonl > nh_sub_tweets.csv
     
- The outputted csv should look something like this:
  ![Screenshot example](/assets/json2csv.png)
     
 _network.py_
 
     python utils/network.py nh_sub_tweets.jsonl nh_sub_network.html
     
-The outputted network should look something like this: 
 ![Screenshot example](/assets/network.png)
 
-You can click on the dots to see the individual tweets.
+We can click on the dots to see the individual tweets. The central node(red) is the original tweet of a video interview. The connected nodes(yellow) are the replies and retweets to/of that video. The other nodes(gray) are attached by similarity to that central node and it's surrounding nodes. 
 
 ![Screenshot example](/assets/network_video.gif)
-    
+
+We can move the cluster by clicking on one of the nodes and dragging it to the place on our screen we would like it to be. The bigger the data size, the longer it will take to mode the nodes around. There are also nodes not attached to the cluster. 
+
 _source.py_
 
-    python utils/source.py tweets.jsonl > sources.html
+We can create a page with the sources(ranked most to least) used with source.py.
+
+    python utils/source.py nh_sub_tweets.jsonl > nh_sub_source.html
+    
+![Screenshot example](/assets/source.png)
+
+We can click on the links provided for each source to learn more about them. 
   
 _wall.py_
 
