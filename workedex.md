@@ -155,7 +155,7 @@ _users.py_
 
 This section allows us to create visuals of the data. 
 
-_geojson.py_
+### _geojson.py_
 
     python utils/geojson.py tweets.jsonl > tweets.geojson 
    
