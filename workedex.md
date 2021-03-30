@@ -167,7 +167,7 @@ _json2csv.py_
 
     python utils/json2csv.py nh_sub_tweets.jsonl > nh_sub_tweets.csv
     
-    ![Screenshot example](/assets/json2csv.png)
+ ![Screenshot example](/assets/json2csv.png)
     
 _network.py_
 
