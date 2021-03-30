@@ -185,7 +185,7 @@ Or we can add a random lon and lat shift to the bounding box centroids (0-0.1)
 
 As we can see below, the shift is not too big.
 
-![Screenshot example](/assets/dod_centroidvsfuzz.png)
+![Screenshot example](/assets/dod_centroidvsjson.png)
     
 *Warning about using geo location* DON"T FORGET TO UPDATE THIS
    
