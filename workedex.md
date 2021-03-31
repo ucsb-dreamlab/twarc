@@ -134,13 +134,14 @@ _webarchives.py_
     
 _extractor.py_
 
-    python utils/extractor.py user:screen_name -output nh_sub_extractor.csv
+    python utils/extractor.py user:screen_name entities:hashtags -output nh_sub_extractor.csv
+
     
 _flakey.py_
 
     python utils/flakey.py nh_sub_ids.txt > nh_sub_flakey.csv
     
-_media_urls.py_
+### _media_urls.py_
     
     python utils/media_urls.py nh_sub_dod.jsonl > nh_sub_media_urls.txt
     
@@ -150,7 +151,7 @@ _media2warc.py_
 
     python utils/media2warc.py /user/tweets/rip/nh_sub_dod-0001.jsonl.gz /user/tweets/rip/nh_sub_dod-0001.warc.gz
     
-_retweets.py_
+### _retweets.py_
     
     python utils/retweets.py nh_sub_dod.jsonl > nh_sub_retweets.jsonl
     
@@ -160,21 +161,27 @@ This returns a blank JSON because there are no retweets in the subsetted dataset
     
 ![DOD RETWEETS](/assets/dod_retweets.png)
 
-_tags.py_
+### _tags.py_
     
     python utils/tags.py nh_sub_dod.jsonl > nh_sub_hashtags.txt
     
-_times.py_
+![DOD TAGS](/assets/dod_tags.png)
+    
+### _times.py_
     
     python utils/times.py nh_sub_dod.jsonl > nh_sub_times.txt
+    
+![DOD TIMES](/assets/dod_times.png)
     
 _tweets.py_
   
     python utils/tweets.py nh_sub_dod.jsonl > nh_sub_tweets.txt
     
-_tweetometer.py_
+### _tweetometer.py_
  
     python utils/tweetometer.py nh_sub_dod.jsonl > nh_sub_tweetometer.csv
+    
+![DOD TWEETOMETER](/assets/dod_tweetometer.png)
     
 _tweet_text.py_
     
