@@ -94,6 +94,14 @@ By specifying that we want to filter by tweets without geo coordinates, we can g
     
     python utils/sensitive.py nh_sub_dod.jsonl > nh_sub_sensitive.jsonl
     
+Column R is the variable possibly_sensitive, a boolean value (TRUE or FALSE) representing whether the tweet is considered sensitive. This first image is the dataset before running the utility sensitive.py. 
+    
+![DOD NOT SENSITIVE](/assets/dod_notsensitive.png)
+
+As you can see, the tweet that had been identified as sensitive has now been removed. 
+
+![DOD SENSITIVE](/assets/dod_sensitive.png)
+    
 ### _search.py_
 
     python utils/search.py shot nh_sub_dod.jsonl > nh_sub_search.jsonl
