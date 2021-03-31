@@ -84,7 +84,7 @@ By specifying that we want to filter by tweets without geo coordinates, we can g
 
     python utils/geofilter.py nh_sub_dod.jsonl --no-coordinates > nh_sub_geofilter.jsonl
   
-![DOD GEO FILTER](/assets/dod_geofilter.png)
+![DOD GEO FILTER](/assets/dod_geo_filter.png)
     
 ### _noretweets.py_
 
