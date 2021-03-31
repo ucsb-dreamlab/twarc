@@ -59,6 +59,8 @@ Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 
     python utils/filter_date.py --mindate 31-march-2019 nh_sub_dedup.jsonl > nh_sub_dod.jsonl
     
 ![DOD FILTER BY DATE](/assets/dod_filter_date.png)
+
+As we can see from the photo of the CSV (We can use the json2csv.py utility listed on the Visualization page and demonstrated below to check this utility and those following), the first tweet entries are from the DOD. Since we took a smaller sample of the dataset, using this filter allows us to only analyze tweets made on the DOD as our subset doesn't extend beyond March 31st. 
     
 _filter_users.py_  (This requires use of another utility: .py)
    
@@ -72,9 +74,17 @@ _gender.py__
 
     python utils/geo.py nh_sub_dod.jsonl > nh_sub_geo.jsonl
     
+![DOD GEO](/assets/dod_geo.png)
+
+Based on our results, there are only two tweets in our sample dataset (after being filtered by DOD) that contain geo coordinates. 
+    
 ### _geofilter.py_ 
 
+By specifying that we want to filter by tweets without geo coordinates, we can get the tweets not returned by geo.py. 
+
     python utils/geofilter.py nh_sub_dod.jsonl --no-coordinates > nh_sub_geofilter.jsonl
+  
+![DOD GEO FILTER](/assets/dod_geofilter.png)
     
 ### _noretweets.py_
 
