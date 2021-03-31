@@ -58,6 +58,8 @@ Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 
 
     python utils/filter_date.py --mindate 31-march-2019 nh_sub_dedup.jsonl > nh_sub_dod.jsonl
     
+![DOD FILTER BY DATE](/assets/dod_filter_date.png)
+    
 _filter_users.py_  (This requires use of another utility: .py)
    
     python utils/filter_users.py nh_sub_sn.txt > nh_sub_users.jsonl
@@ -66,25 +68,25 @@ _gender.py__
 
     python utils/gender.py --gender female tweets.jsonl | utils/wordcloud.py > tweets-female.html python utils/gender.py --gender [male|female|unknown] tweet_file *
     
-_geo.py_ 
+### _geo.py_ 
 
     python utils/geo.py nh_sub_dod.jsonl > nh_sub_geo.jsonl
     
-_geofilter.py_ 
+### _geofilter.py_ 
 
     python utils/geofilter.py nh_sub_dod.jsonl --no-coordinates > nh_sub_geofilter.jsonl
     
-_noretweets.py_
+### _noretweets.py_
 
     python utils/noretweets.py nh_sub_dod.jsonl > nh_sub_noretweets.jsonl
     
-_sensitive.py_
+### _sensitive.py_
     
     python utils/sensitive.py nh_sub_dod.jsonl > nh_sub_sensitive.jsonl
     
-_search.py_
+### _search.py_
 
-    python utils/search.py rip nh_sub_dod.jsonl > nh_sub_search.txt
+    python utils/search.py shot nh_sub_dod.jsonl > nh_sub_search.jsonl
     
 _twarc-archive.py_
 
@@ -169,23 +171,23 @@ We can use geojson.py to create a GeoJSON file when the geospatial location of a
     
 We can then use a [GeoSpatial JSON reader](http://geojsonviewer.nsspot.net/) to visualize this file on the map.  
     
-![Screenshot example](/assets/dod_geojson.png)
+![DOD GEOJSON](/assets/dod_geojson.png)
 
 We can do further manipulation by creating a centroid instead of a bounding box.
 
     python utils/geojson.py --centroid nh_sub_dod.jsonl > nh_dod_centroid.geojson
     
-![Screenshot example](/assets/dod_centroid.png)
+![DOD CENTROID GEOJSON](/assets/dod_centroid.png)
 
 Or we can add a random lon and lat shift to the bounding box centroids (0-0.1)
 
     python utils/geojson.py --centroid --fuzz 0.01 nh_sub_dod.jsonl > nh_dod_fuzz.geojson
     
-![Screenshot example](/assets/dod_fuzz.png)
+![DOD FUZZ GEOJSON](/assets/dod_fuzz.png)
 
 As we can see below, the shift is not too big.
 
-![Screenshot example](/assets/dod_centroidvsjson.png)
+![DOD CENTROID VS FUZZ GEOJSON](/assets/dod_centroidvsjson.png)
     
 *Warning about using geo location* DON"T FORGET TO UPDATE THIS
    
@@ -197,17 +199,17 @@ We can view the tweets in a more cohesive manner by turning our json into a csv.
 
     python utils/json2csv.py nh_sub_dod.jsonl > nh_dod_tweets.csv
     
- ![Screenshot example](/assets/dod_json2csv.png)
+ ![DOD CSV](/assets/dod_json2csv.png)
     
 ### _network.py_
 
     python utils/network.py nh_sub_dod.jsonl nh_dod_network.html
     
-![Screenshot example](/assets/dod_network.png)
+![DOD NETWORK](/assets/dod_network.png)
 
 We can click on the dots to see the individual tweets. The central node(red) is the original tweet of a video interview. The connected nodes(yellow) are the replies and retweets to/of that video. The other nodes(gray) are attached by similarity to that central node and it's surrounding nodes. 
 
-![Screenshot example](/assets/dod_network_video.gif)
+![DOD NETWORK VIDEO](/assets/dod_network_video.gif)
 
 We can move the cluster by clicking on one of the nodes and dragging it to the place on our screen we would like it to be. The bigger the data size, the longer it will take to mode the nodes around. There are also nodes not attached to the cluster. 
 
@@ -217,7 +219,7 @@ We can create a page with the sources(ranked most to least) used with source.py.
 
     python utils/source.py nh_sub_dod.jsonl > nh_dod_source.html
     
-![Screenshot example](/assets/dod_source.png)
+![DOD SOURCE](/assets/dod_source.png)
 
 We can click on the links provided for each source to learn more about them. 
   
@@ -227,7 +229,7 @@ We can also create a wall of tweets.
 
     python utils/wall.py nh_sub_dod.jsonl > nh_dod_wall.html
     
-![Screenshot example](/assets/dod_wall.png)
+![DOD WALL](/assets/dod_wall.png)
    
 ### _wordcloud.py_    
 
@@ -235,7 +237,7 @@ The last visualization tool we'll go over is creating a wordcloud.
     
     python utils/wordcloud.py nh_sub_dod.jsonl > nh_dod_wordcloud.html
     
-![Screenshot example](/assets/dod_wordcloud.png)
+![DOD WORDCLOUD](/assets/dod_wordcloud.png)
 
 
 <a name="status"/>
