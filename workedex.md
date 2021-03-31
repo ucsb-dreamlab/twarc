@@ -98,13 +98,15 @@ Column R is the variable possibly_sensitive, a boolean value (TRUE or FALSE) rep
     
 ![DOD NOT SENSITIVE](/assets/dod_notsensitive.png)
 
-As you can see, the tweet that had been identified as sensitive has now been removed. 
+The tweet that had been identified as sensitive has now been removed. 
 
 ![DOD SENSITIVE](/assets/dod_sensitive.png)
     
 ### _search.py_
 
     python utils/search.py shot nh_sub_dod.jsonl > nh_sub_search.jsonl
+    
+![DOD SEARCH SHOT](/assets/dod_search.png)
     
 _twarc-archive.py_
 
