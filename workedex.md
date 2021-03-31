@@ -120,13 +120,17 @@ _webarchives.py_
 
 ## Extracting the Data
 
-_embeds.py_
+### _embeds.py_
 
     python utils/embeds.py nh_sub_dod.jsonl > nh_sub_embeds.txt
     
-_emojis.py_    
+![DOD EMBEDS](/assets/dod_embeds.png)
+    
+### _emojis.py_    
     
     python utils/emojis.py nh_sub_dod.jsonl > nh_sub_emojis.txt
+    
+![DOD EMOJIS](/assets/dod_emojis.png)
     
 _extractor.py_
 
@@ -140,6 +144,8 @@ _media_urls.py_
     
     python utils/media_urls.py nh_sub_dod.jsonl > nh_sub_media_urls.txt
     
+![DOD MEDIA URLS](/assets/dod_media_urls.png)
+
 _media2warc.py_
 
     python utils/media2warc.py /user/tweets/rip/nh_sub_dod-0001.jsonl.gz /user/tweets/rip/nh_sub_dod-0001.warc.gz
@@ -148,6 +154,12 @@ _retweets.py_
     
     python utils/retweets.py nh_sub_dod.jsonl > nh_sub_retweets.jsonl
     
+This returns a blank JSON because there are no retweets in the subsetted dataset filtered by date. However, when we run this on the original subsetted dataset:
+    
+    python utils/retweets.py nh_sub_tweets.jsonl > nhsub_retweets.jsonl
+    
+![DOD RETWEETS](/assets/dod_retweets.png)
+
 _tags.py_
     
     python utils/tags.py nh_sub_dod.jsonl > nh_sub_hashtags.txt
