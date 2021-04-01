@@ -362,21 +362,39 @@ _deleted.py_
 
     python utils/deleted.py tweets.jsonl > deleted.jsonl
     
-_deletes.py_    
+### _deleted_users.py    
+
+We can run deleted_users.py to produce a JSON containing the tweets that have been deleted. 
     
-    python utils/deletes.py tweet.jsonl > deletes.jsonl
+    python utils/deleted_users.py nh_sub_dod.jsonl > nh_dod_deleted_users.jsonl
+   
+   
+![DOD WORDCLOUD](/assets/dod_deleted_users.png)
+   
+   
+### _deletes.py_    
+
+We can then feed the output JSON into deletes.py to see the reason the tweet has been deleted. 
     
-_deleted_users.py    
+    python utils/deletes.py nh_dod_deleted_users.jsonl > nh_dod_deletes.jsonl
     
-    python utils/deleted_users.py tweets.jsonl > deleted_users.jsonl
-  
+    
+![DOD WORDCLOUD](/assets/dod_deletes.png)
+
+
 _foaf.py  
    
     python utils/foaf.py 2267720350
 
-_oembeds.py_
+### _oembeds.py_
     
     python utils/oembeds.py election.jsonl > oembeds.jsonl
+    
+*Note: Warning messages like the following will be printed to the command line if the url has been deleted.*     
+    
+ 
+![DOD OEMBEDS WARNING](/assets/dod_oembeds_warning.png)
+
     
 _tweet.py_
     
