@@ -62,7 +62,7 @@ Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 
 
 As we can see from the photo of the CSV (We can use the json2csv.py utility listed on the Visualization page and demonstrated below to check this utility and those following), the first tweet entries are from the DOD. Since we took a smaller sample of the dataset, using this filter allows us to only analyze tweets made on the DOD as our subset doesn't extend beyond March 31st. 
     
-_filter_users.py_
+### _filter_users.py_
    
 This one can be a little tricky if the input file doesn't have proper formatting. The input must be supplied as a list in a TXT or CSV file. It can contain:
     - screen names
@@ -78,6 +78,8 @@ We're going to use screen names for this example. We can collect these using jso
 We can then copy the screen names (in this case, the first _ screen names listed) into our file of choice. 
 
 ![DOD FILTER BY USERS INPUT2](/assets/dod_filter_users_input2.png)
+
+Once we run our usage command, we will get a JSON containing only the tweets made by the screen names we listed in the file. 
  
     python utils/filter_users.py nh_sub_sn.txt nh_sub_dod.jsonl > nh_sub_users.jsonl
     
