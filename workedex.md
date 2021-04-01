@@ -14,7 +14,6 @@ output: html
 [Visualizing the Data](#visual)  
 [Getting the Status of the Data](#status)  
 [Organzing the Data](#organize)  
-[Checking Your System](#system)  
 
 <a name="intro"/>
 
@@ -434,22 +433,8 @@ _urls.py_
    
 _youtubedl.py_
    
-    python utils/youtubedl.py election.json
-
-<a name="system"/>
-
-## Checking Your System
-
-_auth_timing.py_
-
-    python utils/auth_timing.py tweets.jsonl 
-    
-_remove_limit.py_
-    
-    python utils/remove_limit.py tweets.jsonl > tweets_no_warnings.jsonl
-    
-_validate.py_   
-   
-    python utils/validate.py election.json
-
+    python utils/youtubedl.py nh_sub_dod.jsonl
+ 
+ 
 [Back To Top](#worked-example)
+
