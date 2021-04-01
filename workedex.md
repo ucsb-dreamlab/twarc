@@ -84,6 +84,7 @@ We're going to use screen names for this example. We can collect these using jso
 
 ![DOD FILTER BY USERS INPUT1](/assets/dod_filter_users_input1.png)
 
+
 We can then copy the screen names (in this case, the first _ screen names listed) into our file of choice. 
 
 
@@ -102,44 +103,57 @@ _gender.py__
 
     python utils/gender.py --gender female tweets.jsonl | utils/wordcloud.py > tweets-female.html python utils/gender.py --gender [male|female|unknown] tweet_file *
     
+    
 ### _geo.py_ 
 
     python utils/geo.py nh_sub_dod.jsonl > nh_sub_geo.jsonl
     
+    
 ![DOD GEO](/assets/dod_geo.png)
+
 
 Based on our results, there are only two tweets in our sample dataset (after being filtered by DOD) that contain geo coordinates. 
     
+
 ### _geofilter.py_ 
 
 By specifying that we want to filter by tweets without geo coordinates, we can get the tweets not returned by geo.py. 
 
     python utils/geofilter.py nh_sub_dod.jsonl --no-coordinates > nh_sub_geofilter.jsonl
   
+
 ![DOD GEO FILTER](/assets/dod_geo_filter.png)
+
     
 ### _noretweets.py_
 
     python utils/noretweets.py nh_sub_dod.jsonl > nh_sub_noretweets.jsonl
     
+
 ### _sensitive.py_
     
     python utils/sensitive.py nh_sub_dod.jsonl > nh_sub_sensitive.jsonl
     
 Column R is the variable possibly_sensitive, a boolean value (TRUE or FALSE) representing whether the tweet is considered sensitive. This first image is the dataset before running the utility sensitive.py. 
     
+
 ![DOD NOT SENSITIVE](/assets/dod_notsensitive.png)
+
 
 The tweet that had been identified as sensitive has now been removed. 
 
+
 ![DOD SENSITIVE](/assets/dod_sensitive.png)
     
+
 ### _search.py_
 
     python utils/search.py shot nh_sub_dod.jsonl > nh_sub_search.jsonl
     
+
 ![DOD SEARCH SHOT](/assets/dod_search.png)
     
+
 _twarc-archive.py_
 
     % twarc-archive.py rip /user/tweets/rip
@@ -150,20 +164,26 @@ _webarchives.py_
 
 <a name="extract"/>
 
+
 ## Extracting the Data
+
 
 ### _embeds.py_
 
     python utils/embeds.py nh_sub_dod.jsonl > nh_sub_embeds.txt
     
+
 ![DOD EMBEDS](/assets/dod_embeds.png)
     
+
 ### _emojis.py_    
     
     python utils/emojis.py nh_sub_dod.jsonl > nh_sub_emojis.txt
     
+
 ![DOD EMOJIS](/assets/dod_emojis.png)
     
+
 _extractor.py_
 
     python utils/extractor.py user:screen_name entities:hashtags -output nh_sub_extractor.csv
@@ -179,10 +199,12 @@ _flakey.py_
     
 ![DOD MEDIA URLS](/assets/dod_media_urls.png)
 
+
 _media2warc.py_
 
     python utils/media2warc.py /user/tweets/rip/nh_sub_dod-0001.jsonl.gz /user/tweets/rip/nh_sub_dod-0001.warc.gz
     
+
 ### _retweets.py_
     
     python utils/retweets.py nh_sub_dod.jsonl > nh_sub_retweets.jsonl
@@ -191,20 +213,26 @@ This returns a blank JSON because there are no retweets in the subsetted dataset
     
     python utils/retweets.py nh_sub_tweets.jsonl > nhsub_retweets.jsonl
     
+
 ![DOD RETWEETS](/assets/dod_retweets.png)
+
 
 ### _tags.py_
     
     python utils/tags.py nh_sub_dod.jsonl > nh_sub_hashtags.txt
     
+
 ![DOD TAGS](/assets/dod_tags.png)
     
+
 ### _times.py_
     
     python utils/times.py nh_sub_dod.jsonl > nh_sub_times.txt
     
+
 ![DOD TIMES](/assets/dod_times.png)
     
+
 _tweets.py_
   
     python utils/tweets.py nh_sub_dod.jsonl > nh_sub_tweets.txt
@@ -296,7 +324,11 @@ We can create a page with the sources(ranked most to least) used with source.py.
 
     python utils/source.py nh_sub_dod.jsonl > nh_dod_source.html
     
+*Note: The html is hardcoded in the source.py file. The title of the page is set to "Title". To change this, you have to edit the html code itself from 'Title Here'(https://github.com/DocNow/twarc/blob/3dd763516e643d070fab237bd5fb18b1274ec738/utils/wall.py#L113) to the title of your choice*  
+    
+   
 ![DOD SOURCE](/assets/dod_source.png)
+
 
 We can click on the links provided for each source to learn more about them. 
   
