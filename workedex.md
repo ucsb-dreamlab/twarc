@@ -183,17 +183,23 @@ _tweets.py_
     
 ![DOD TWEETOMETER](/assets/dod_tweetometer.png)
     
-_tweet_text.py_
+### _tweet_text.py_
     
     python utils/tweet_text.py nh_sub_dod.jsonl > nh_sub_tweet_text.txt
     
-_tweet_urls.py_
+![DOD TWEET TEXT](/assets/dod_tweet_text.png)
+    
+### _tweet_urls.py_
     
     python utils/tweet_urls.py nh_sub_dod.jsonl > nh_sub_tweet_urls.txt
     
-_users.py_
+![DOD TWEET TEXT](/assets/dod_tweet_urls.png)
+    
+### _users.py_
     
     python utils/users.py nh_sub_dod.jsonl > nh_sub_users.txt
+    
+ ![DOD TWEET TEXT](/assets/dod_users.png)   
 
 <a name="visual"/>
 
