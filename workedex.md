@@ -324,7 +324,7 @@ We can create a page with the sources(ranked most to least) used with source.py.
 
     python utils/source.py nh_sub_dod.jsonl > nh_dod_source.html
     
-*Note: The html is hardcoded in the source.py file. The title of the page is set to "Title". To change this, you have to edit the html code itself from 'Title Here'(https://github.com/DocNow/twarc/blob/3dd763516e643d070fab237bd5fb18b1274ec738/utils/wall.py#L113) to the title of your choice*  
+*Note: The html is hardcoded in the source.py file. The title of the page is set to 'Title Here'. To change this, you have to edit the html code itself from ['Title Here'](https://github.com/DocNow/twarc/blob/3dd763516e643d070fab237bd5fb18b1274ec738/utils/wall.py#L113) to the title of your choice*  
     
    
 ![DOD SOURCE](/assets/dod_source.png)
@@ -332,26 +332,31 @@ We can create a page with the sources(ranked most to least) used with source.py.
 
 We can click on the links provided for each source to learn more about them. 
   
+
 ### _wall.py_
 
 We can also create a wall of tweets. 
 
     python utils/wall.py nh_sub_dod.jsonl > nh_dod_wall.html
     
+
 ![DOD WALL](/assets/dod_wall.png)
    
+
 ### _wordcloud.py_    
 
 The last visualization tool we'll go over is creating a wordcloud. 
     
     python utils/wordcloud.py nh_sub_dod.jsonl > nh_dod_wordcloud.html
     
+
 ![DOD WORDCLOUD](/assets/dod_wordcloud.png)
 
 
 <a name="status"/>
 
 ## Getting the Status the Data
+
 
 _deleted.py_
 
