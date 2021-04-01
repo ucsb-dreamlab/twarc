@@ -388,7 +388,7 @@ _foaf.py
 
 ### _oembeds.py_
     
-    python utils/oembeds.py election.jsonl > oembeds.jsonl
+    python utils/oembeds.py nh_sub_dod.jsonl > nh_dod_oembeds.jsonl
     
 *Note: Warning messages like the following will be printed to the command line if the url has been deleted.*     
     
@@ -400,6 +400,10 @@ _tweet.py_
     
     python utils/tweet.py 795847322957512704 > tweet.jsonl
     
+    
+![DOD TWEET ID](/assets/dod_tweet_id.png)
+
+ 
 _tweet_compliance.py_
     
     python utils/tweet_compliance.py test.txt > test.json 2> test_delete.txt
@@ -410,11 +414,15 @@ _wayback.py_
 
 <a name="organize"/>
 
+
 ## Organizing the Data
 
-_sort_by_id.py_
 
-    python utils/sort_by_id.py tweets.jsonl > sort_by_id.jsonl
+### _sort_by_id.py_
+
+This one is pretty simple. It just sorts the dataset in ascending order by id. It's essentially the same as sorting by date as tweet ids are parsed out in order of creation.
+
+    python utils/sort_by_id.py nh_sub_dod.jsonl > nh_dod_sort_by_id.jsonl
     
 _unshrtn.py_    
     
