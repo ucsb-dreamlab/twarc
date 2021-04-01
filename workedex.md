@@ -42,9 +42,11 @@ Next we will need to rehydrate the dataset. This can be done using the following
 
 <a name="filter"/>
 
+
 ## Filtering the Data 
 
 Filtering the data can be seen as a way to clean the data before analysis.
+
 
 ### _deduplicate.py_
 
@@ -52,39 +54,50 @@ We'd like to start out by removing duplicate ids and retweets from our dataset u
 
     python utils/deduplicate.py --extract-retweets nh_sub_tweets.jsonl > nh_sub_dedup.jsonl
     
+
 ### _filter_date.py_
 
 Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 2019) and the days following. We can do so using _filter_date.py_.
 
     python utils/filter_date.py --mindate 31-march-2019 nh_sub_dedup.jsonl > nh_sub_dod.jsonl
     
+
 ![DOD FILTER BY DATE](/assets/dod_filter_date.png)
+
 
 As we can see from the photo of the CSV (We can use the json2csv.py utility listed on the Visualization page and demonstrated below to check this utility and those following), the first tweet entries are from the DOD. Since we took a smaller sample of the dataset, using this filter allows us to only analyze tweets made on the DOD as our subset doesn't extend beyond March 31st. 
     
+
 ### _filter_users.py_
    
 This one can be a little tricky if the input file doesn't have proper formatting. The input must be supplied as a list in a TXT or CSV file. It can contain:
-    - screen names
-    - user ids
-    - screen name,user id
-    - user id,screen name
+
+   screen names  
+   user ids  
+   screen name,user id  
+   user id,screen name  
+   
 each on a separate line.
 
 We're going to use screen names for this example. We can collect these using json2csv.py utility (see Visualization page or example below for more information). 
+
 
 ![DOD FILTER BY USERS INPUT1](/assets/dod_filter_users_input1.png)
 
 We can then copy the screen names (in this case, the first _ screen names listed) into our file of choice. 
 
+
 ![DOD FILTER BY USERS INPUT2](/assets/dod_filter_users_input2.png)
+
 
 Once we run our usage command, we will get a JSON containing only the tweets made by the screen names we listed in the file. 
  
     python utils/filter_users.py nh_sub_sn.txt nh_sub_dod.jsonl > nh_sub_users.jsonl
     
+
 ![DOD FILTER BY USER](/assets/dod_filter_users.png)
     
+
 _gender.py__
 
     python utils/gender.py --gender female tweets.jsonl | utils/wordcloud.py > tweets-female.html python utils/gender.py --gender [male|female|unknown] tweet_file *
