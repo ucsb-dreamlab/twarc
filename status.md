@@ -49,7 +49,7 @@ Usage:
 <a name="foaf.py"/>
 
 ## foaf.py
-This utility gets the friend-of-a-friend network for a particular user. The network is expressed as tuples of user identifiers for the user and their friend (who they follow). Input is the user's id. 
+This utility gets the friend-of-a-friend network for a particular user. The network is expressed as tuples of user identifiers for the user and their friend (who they follow). Input is the user's id. To do so, foaf.py creates a SQLite database (named with the user id) to gather the user id links. The database is useful to keep track of which user ids have already been fetched. Then once the full network has been collected it looks up user information for each user id and stores that in the db. And once that is done it writes both tables to CSV files named after the user id.
 
 Usage: 
 
