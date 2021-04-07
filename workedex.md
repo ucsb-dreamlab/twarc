@@ -128,6 +128,8 @@ By specifying that we want to filter by tweets without geo coordinates, we can g
 
     python utils/noretweets.py nh_sub_dod.jsonl > nh_sub_noretweets.jsonl
     
+*Note: for the current dataset, this will just return our original dataset since there are no retweets*
+
 
 ### _sensitive.py_
     
@@ -175,11 +177,14 @@ The tweet that had been identified as sensitive has now been removed.
 ![DOD EMOJIS](/assets/dod_emojis.png)
     
 
-_extractor.py_
+### _extractor.py_
 
     python utils/extractor.py user:screen_name entities:hashtags -output nh_sub_extractor.csv
 
-    
+
+![DOD MEDIA URLS](/assets/dod_extactor.png)
+
+
 _flakey.py_
 
     python utils/flakey.py nh_sub_ids.txt > nh_sub_flakey.csv
