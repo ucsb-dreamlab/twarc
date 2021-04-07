@@ -358,7 +358,7 @@ We can run deleted_users.py to produce a JSON containing the tweets that have be
 
 We can then feed the output JSON into deletes.py to see the reason the tweet has been deleted. 
     
-    python utils/deletes.py nh_dod_deleted_users.jsonl > nh_dod_deletes.jsonl
+    python utils/deletes.py nh_dod_deleted_users.jsonl > nh_dod_deletes.txt
     
     
 ![DOD WORDCLOUD](/assets/dod_deletes.png)
