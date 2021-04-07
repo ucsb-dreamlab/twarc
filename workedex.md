@@ -369,9 +369,11 @@ We can then feed the output JSON into deletes.py to see the reason the tweet has
 ![DOD DELETES](/assets/dod_deletes.png)
 
 
-_foaf.py  
+### _foaf.py_ 
    
     python utils/foaf.py 2267720350
+    
+%Just trying to figure out how to open the SQL file%
 
 ### _oembeds.py_
     
