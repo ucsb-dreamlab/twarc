@@ -182,7 +182,7 @@ The tweet that had been identified as sensitive has now been removed.
     python utils/extractor.py user:screen_name entities:hashtags -output nh_sub_extractor.csv
 
 
-![DOD MEDIA URLS](/assets/dod_extactor.png)
+![DOD EXTRACTOR](/assets/dod_extractor.png)
 
 
 _flakey.py_
@@ -356,7 +356,7 @@ We can run deleted_users.py to produce a JSON containing the tweets that have be
     python utils/deleted_users.py nh_sub_dod.jsonl > nh_dod_deleted_users.jsonl
    
    
-![DOD WORDCLOUD](/assets/dod_deleted_users.png)
+![DOD DELETED USERS](/assets/dod_deleted_users.png)
    
    
 ### _deletes.py_    
@@ -366,7 +366,7 @@ We can then feed the output JSON into deletes.py to see the reason the tweet has
     python utils/deletes.py nh_dod_deleted_users.jsonl > nh_dod_deletes.txt
     
     
-![DOD WORDCLOUD](/assets/dod_deletes.png)
+![DOD DELETES](/assets/dod_deletes.png)
 
 
 _foaf.py  
