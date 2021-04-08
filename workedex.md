@@ -230,9 +230,12 @@ This returns a blank JSON because there are no retweets in the subsetted dataset
 ![DOD TIMES](/assets/dod_times.png)
     
 
-_tweets.py_
+### _tweets.py_
   
     python utils/tweets.py nh_sub_dod.jsonl > nh_sub_tweets.txt
+    
+![DOD TIMES](/assets/dod_tweets.png) 
+
     
 ### _tweetometer.py_
  
