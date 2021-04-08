@@ -17,13 +17,15 @@ output: html
 
 <a name="intro"/>
 
-----------------------------------------------THIS PAGE IS CURRENTLY UNDER CONSTRUCTION---------------------------------------
+--------------------------------THIS PAGE IS CURRENTLY UNDER CONSTRUCTION------------------------------
 
 For the worked example, we will run through the [2019 Nipsey Hussle Funeral Tweets](https://archive.org/details/nipsey-hustle-tweets). The tweet ids are available under Downloadable Options on the right-hand side of the page and are named nipsey-ids.txt.gz. (Note: The extension .gz is a file format and software application used for file compression and decompression. If you don't know how to open this type of file or are having trouble doing so, visit Utilities Home and scroll to Resources). 
 
-If you have not downloaded Twarc, do so at the [Twarc Doc Now](https://github.com/DocNow/twarc). For a more non-technical-user download, visit [scholarslab](https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html). Once Twarc is downloaded, be sure to start the twarc session. 
+If you have not downloaded Twarc, do so at the [Twarc Doc Now](https://github.com/DocNow/twarc). For a more non-technical-user download, visit [scholarslab](https://scholarslab.github.io/learn-twarc/06-twarc-command-basics.html).
 
-You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. Revisit the utility page corresponding to each section for in-depth explanation of each utility. 
+Once twarc is downloaded, move into your twarc directory then start the twarc session (using _twarc configure_ in the command line)
+
+You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. Revisit the utility page corresponding to each section for an explanation of each utility. 
 
 <a name="prep"/>
 
