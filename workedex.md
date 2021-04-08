@@ -35,7 +35,7 @@ The first step will be to unzip our dataset. It should unzip to a txt file title
 
 There are 11,642,103 ids listed in ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python code to do this. Click 'View on Github' at the top of this page or visit the [ucsb-collaboratory twarc repository](https://github.com/ucsb-collaboratory/twarc) to download the file subset.py. Once downloaded, simply run subset.py to appy it to your ids file. Look at the code documentation for more explanation of what it does and how it works. The outputted file is titled nh_sub_ids.txt. 
 
-Next we will need to rehydrate the dataset. This can be done using the following command:
+Next we will need to rehydrate the dataset.
 
     twarc hydrate nh_sub_ids.txt > nh_sub_tweets.jsonl
     
@@ -51,16 +51,16 @@ Filtering the data can be seen as a way to clean the data before analysis.
 
 ### _deduplicate.py_
 
-We'd like to start out by removing duplicate ids and retweets from our dataset using _deduplicate.py_.
+We'd like to start out by removing duplicate ids and retweets from our dataset.
 
-    python utils/deduplicate.py --extract-retweets nh_sub_tweets.jsonl > nh_sub_dedup.jsonl
+    python utils/deduplicate.py --extract-retweets nh_sub_tweets.jsonl > nh_sub_deduplicate.jsonl
     
 
 ### _filter_date.py_
 
-Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 2019) and the days following. We can do so using _filter_date.py_.
+Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 2019).
 
-    python utils/filter_date.py --mindate 31-march-2019 nh_sub_dedup.jsonl > nh_sub_dod.jsonl
+    python utils/filter_date.py --mindate 31-march-2019 nh_sub_deduplicate.jsonl > nh_dod.jsonl
     
 
 ![DOD FILTER BY DATE](/assets/dod_filter_date.png)
@@ -94,7 +94,7 @@ We can then copy the screen names (in this case, the first _ screen names listed
 
 Once we run our usage command, we will get a JSON containing only the tweets made by the screen names we listed in the file. 
  
-    python utils/filter_users.py nh_sub_sn.txt nh_sub_dod.jsonl > nh_sub_users.jsonl
+    python utils/filter_users.py nh_dod_sn.txt nh_dod.jsonl > nh_dod_users.jsonl
     
 
 ![DOD FILTER BY USER](/assets/dod_filter_users.png)
@@ -107,7 +107,7 @@ _gender.py__
     
 ### _geo.py_ 
 
-    python utils/geo.py nh_sub_dod.jsonl > nh_sub_geo.jsonl
+    python utils/geo.py nh_dod.jsonl > nh_dod_geo.jsonl
     
     
 ![DOD GEO](/assets/dod_geo.png)
@@ -120,7 +120,7 @@ Based on our results, there are only two tweets in our sample dataset (after bei
 
 By specifying that we want to filter by tweets without geo coordinates, we can get the tweets not returned by geo.py. 
 
-    python utils/geofilter.py nh_sub_dod.jsonl --no-coordinates > nh_sub_geofilter.jsonl
+    python utils/geofilter.py nh_dod.jsonl --no-coordinates > nh_dod_geofilter.jsonl
   
 
 ![DOD GEO FILTER](/assets/dod_geo_filter.png)
@@ -128,14 +128,14 @@ By specifying that we want to filter by tweets without geo coordinates, we can g
     
 ### _noretweets.py_
 
-    python utils/noretweets.py nh_sub_dod.jsonl > nh_sub_noretweets.jsonl
+    python utils/noretweets.py nh_dod.jsonl > nh_dod_noretweets.jsonl
     
 *Note: for the current dataset, this will just return our original dataset since there are no retweets*
 
 
 ### _sensitive.py_
     
-    python utils/sensitive.py nh_sub_dod.jsonl > nh_sub_sensitive.jsonl
+    python utils/sensitive.py nh_dod.jsonl > nh_dod_sensitive.jsonl
     
 Column R is the variable possibly_sensitive, a boolean value (TRUE or FALSE) representing whether the tweet is considered sensitive. This first image is the dataset before running the utility sensitive.py. 
     
@@ -151,7 +151,7 @@ The tweet that had been identified as sensitive has now been removed.
 
 ### _search.py_
 
-    python utils/search.py shot nh_sub_dod.jsonl > nh_sub_search.jsonl
+    python utils/search.py shot nh_dod.jsonl > nh_dod_search.jsonl
     
 
 ![DOD SEARCH SHOT](/assets/dod_search.png)
@@ -165,7 +165,7 @@ The tweet that had been identified as sensitive has now been removed.
 
 ### _embeds.py_
 
-    python utils/embeds.py nh_sub_dod.jsonl > nh_sub_embeds.txt
+    python utils/embeds.py nh_dod.jsonl > nh_dod_embeds.txt
     
 
 ![DOD EMBEDS](/assets/dod_embeds.png)
@@ -173,7 +173,7 @@ The tweet that had been identified as sensitive has now been removed.
 
 ### _emojis.py_    
     
-    python utils/emojis.py nh_sub_dod.jsonl > nh_sub_emojis.txt
+    python utils/emojis.py nh_dod.jsonl > nh_dod_emojis.txt
     
 
 ![DOD EMOJIS](/assets/dod_emojis.png)
@@ -181,7 +181,7 @@ The tweet that had been identified as sensitive has now been removed.
 
 ### _extractor.py_
 
-    python utils/extractor.py user:screen_name entities:hashtags -output nh_sub_extractor.csv
+    python utils/extractor.py user:screen_name entities:hashtags -output nh_dod_extractor.csv
 
 
 ![DOD EXTRACTOR](/assets/dod_extractor.png)
@@ -189,7 +189,10 @@ The tweet that had been identified as sensitive has now been removed.
 
 ### _flakey.py_
 
-    python utils/flakey.py nh_sub_ids.txt > nh_sub_flakey.csv
+    twarc dehydrate nh_dod.jsonl > nh_dod_ids.txt
+
+
+    python utils/flakey.py nh_dod_ids.txt > nh_dod_flakey.csv
     
   
 ![DOD FLAKEY](/assets/dod_flakey.png)
@@ -197,18 +200,18 @@ The tweet that had been identified as sensitive has now been removed.
     
 ### _media_urls.py_
     
-    python utils/media_urls.py nh_sub_dod.jsonl > nh_sub_media_urls.txt
+    python utils/media_urls.py nh_dod.jsonl > nh_dod_media_urls.txt
     
 ![DOD MEDIA URLS](/assets/dod_media_urls.png)
     
 
 ### _retweets.py_
     
-    python utils/retweets.py nh_sub_dod.jsonl > nh_sub_retweets.jsonl
+    python utils/retweets.py nh_dod.jsonl > nh_dod_retweets.jsonl
     
 This returns a blank JSON because there are no retweets in the subsetted dataset filtered by date. However, when we run this on the original subsetted dataset:
     
-    python utils/retweets.py nh_sub_tweets.jsonl > nhsub_retweets.jsonl
+    python utils/retweets.py nh_dod_tweets.jsonl > nh_dod_retweets.jsonl
     
 
 ![DOD RETWEETS](/assets/dod_retweets.png)
@@ -216,7 +219,7 @@ This returns a blank JSON because there are no retweets in the subsetted dataset
 
 ### _tags.py_
     
-    python utils/tags.py nh_sub_dod.jsonl > nh_sub_hashtags.txt
+    python utils/tags.py nh_dod.jsonl > nh_dod_hashtags.txt
     
 
 ![DOD TAGS](/assets/dod_tags.png)
@@ -224,7 +227,7 @@ This returns a blank JSON because there are no retweets in the subsetted dataset
 
 ### _times.py_
     
-    python utils/times.py nh_sub_dod.jsonl > nh_sub_times.txt
+    python utils/times.py nh_dod.jsonl > nh_dod_times.txt
     
 
 ![DOD TIMES](/assets/dod_times.png)
@@ -232,32 +235,32 @@ This returns a blank JSON because there are no retweets in the subsetted dataset
 
 ### _tweets.py_
   
-    python utils/tweets.py nh_sub_dod.jsonl > nh_sub_tweets.txt
+    python utils/tweets.py nh_dod.jsonl > nh_dod_tweets.txt
     
 ![DOD TIMES](/assets/dod_tweets.png) 
 
     
 ### _tweetometer.py_
  
-    python utils/tweetometer.py nh_sub_dod.jsonl > nh_sub_tweetometer.csv
+    python utils/tweetometer.py nh_dod.jsonl > nh_dod_tweetometer.csv
     
 ![DOD TWEETOMETER](/assets/dod_tweetometer.png)
     
 ### _tweet_text.py_
     
-    python utils/tweet_text.py nh_sub_dod.jsonl > nh_sub_tweet_text.txt
+    python utils/tweet_text.py nh_dod.jsonl > nh_dod_tweet_text.txt
     
 ![DOD TWEET TEXT](/assets/dod_tweet_text.png)
     
 ### _tweet_urls.py_
     
-    python utils/tweet_urls.py nh_sub_dod.jsonl > nh_sub_tweet_urls.txt
+    python utils/tweet_urls.py nh_dod.jsonl > nh_dod_tweet_urls.txt
     
 ![DOD TWEET TEXT](/assets/dod_tweet_urls.png)
     
 ### _users.py_
     
-    python utils/users.py nh_sub_dod.jsonl > nh_sub_users.txt
+    python utils/users.py nh_dod.jsonl > nh_dod_users.txt
     
  ![DOD TWEET TEXT](/assets/dod_users.png)   
 
@@ -272,7 +275,7 @@ This section allows us to create visuals of the data.
 We can use geojson.py to create a GeoJSON file when the geospatial location of a tweet is available.  
 
 
-    python utils/geojson.py nh_sub_dod.jsonl > nh_dod_geojson.geojson 
+    python utils/geojson.py nh_dod.jsonl > nh_dod.geojson 
     
 We can then use a [GeoSpatial JSON reader](http://geojsonviewer.nsspot.net/) to visualize this file on the map.  
     
@@ -280,13 +283,13 @@ We can then use a [GeoSpatial JSON reader](http://geojsonviewer.nsspot.net/) to 
 
 We can do further manipulation by creating a centroid instead of a bounding box.
 
-    python utils/geojson.py --centroid nh_sub_dod.jsonl > nh_dod_centroid.geojson
+    python utils/geojson.py --centroid nh_dod.jsonl > nh_dod_centroid.geojson
     
 ![DOD CENTROID GEOJSON](/assets/dod_centroid.png)
 
 Or we can add a random lon and lat shift to the bounding box centroids (0-0.1)
 
-    python utils/geojson.py --centroid --fuzz 0.01 nh_sub_dod.jsonl > nh_dod_fuzz.geojson
+    python utils/geojson.py --centroid --fuzz 0.01 nh_dod.jsonl > nh_dod_fuzz.geojson
     
 ![DOD FUZZ GEOJSON](/assets/dod_fuzz.png)
 
@@ -302,13 +305,13 @@ We can view the tweets in a more cohesive manner by turning our json into a csv.
 
 *Note: if you're using Windows and you get a charmap error, you can change your Region settings using the instructions [here](https://scholarslab.github.io/learn-twarc/08-win-region-settings)*
 
-    python utils/json2csv.py nh_sub_dod.jsonl > nh_dod_tweets.csv
+    python utils/json2csv.py nh_dod.jsonl > nh_dod_tweets.csv
     
  ![DOD CSV](/assets/dod_json2csv.png)
     
 ### _network.py_
 
-    python utils/network.py nh_sub_dod.jsonl nh_dod_network.html
+    python utils/network.py nh_dod.jsonl nh_dod_network.html
     
 ![DOD NETWORK](/assets/dod_network.png)
 
@@ -322,7 +325,7 @@ We can move the cluster by clicking on one of the nodes and dragging it to the p
 
 We can create a page with the sources(ranked most to least) used with source.py.
 
-    python utils/source.py nh_sub_dod.jsonl > nh_dod_source.html
+    python utils/source.py nh_dod.jsonl > nh_dod_source.html
     
 *Note: The html is hardcoded in the source.py file. The title of the page is set to 'Title Here'. To change this, you have to edit the html code itself from ['Title Here'](https://github.com/DocNow/twarc/blob/3dd763516e643d070fab237bd5fb18b1274ec738/utils/wall.py#L113) to the title of your choice*  
     
@@ -337,7 +340,7 @@ We can click on the links provided for each source to learn more about them.
 
 We can also create a wall of tweets. 
 
-    python utils/wall.py nh_sub_dod.jsonl > nh_dod_wall.html
+    python utils/wall.py nh_dod.jsonl > nh_dod_wall.html
     
 
 ![DOD WALL](/assets/dod_wall.png)
@@ -347,7 +350,7 @@ We can also create a wall of tweets.
 
 The last visualization tool we'll go over is creating a wordcloud. 
     
-    python utils/wordcloud.py nh_sub_dod.jsonl > nh_dod_wordcloud.html
+    python utils/wordcloud.py nh_dod.jsonl > nh_dod_wordcloud.html
     
 
 ![DOD WORDCLOUD](/assets/dod_wordcloud.png)
@@ -362,7 +365,7 @@ The last visualization tool we'll go over is creating a wordcloud.
 
 We can run deleted_users.py to produce a JSON containing the tweets that have been deleted. 
     
-    python utils/deleted_users.py nh_sub_dod.jsonl > nh_dod_deleted_users.jsonl
+    python utils/deleted_users.py nh_dod.jsonl > nh_dod_deleted_users.jsonl
    
    
 ![DOD DELETED USERS](/assets/dod_deleted_users.png)
@@ -386,7 +389,7 @@ We can then feed the output JSON into deletes.py to see the reason the tweet has
 
 ### _oembeds.py_
     
-    python utils/oembeds.py nh_sub_dod.jsonl > nh_dod_oembeds.jsonl
+    python utils/oembeds.py nh_dod.jsonl > nh_dod_oembeds.jsonl
     
 *Note: Warning messages like the following will be printed to the command line if the url has been deleted.*     
     
@@ -400,12 +403,12 @@ We'll use the first tweet id in our dataset.
     
 ![DOD TWEET ID](/assets/dod_tweet_id.png)
     
-    python utils/tweet.py 1112143431197835264 > 1tweet.jsonl
+    python utils/tweet.py 1112143431197835264 > dod_tweet.jsonl
 
  
 ### _tweet_compliance.py_
     
-    python utils/tweet_compliance.py nh_dod_ids.txt > nh_sub_dod.jsonl > dod_tweet_compliance.jsonl
+    python utils/tweet_compliance.py nh_dod_ids.txt > nh_dod.jsonl > nh_dod_tweet_compliance.jsonl
     
 The current tweets will be output to a dod_tweet_compliance.jsonl.
     
