@@ -291,13 +291,13 @@ As we can see below, the shift is not too big.
 
 ![DOD CENTROID VS FUZZ GEOJSON](/assets/dod_centroidvsjson.png)
     
-*Warning about using geo location* DON"T FORGET TO UPDATE THIS
+*Jon's tidbit about mapping Twitter*
    
 ### _json2csv.py_
 
-We can view the tweets in a more cohesive manner by turning our json into a csv. This is done with the utility json2csv.py.
+We can view the tweets in a more cohesive manner by turning our json into a csv. 
 
-*Note: if you're using Windows and you get a charmap error, change your Region settings using the instructions [here](https://scholarslab.github.io/learn-twarc/08-win-region-settings)*
+*Note: if you're using Windows and you get a charmap error, you can change your Region settings using the instructions [here](https://scholarslab.github.io/learn-twarc/08-win-region-settings)*
 
     python utils/json2csv.py nh_sub_dod.jsonl > nh_dod_tweets.csv
     
@@ -391,17 +391,28 @@ We can then feed the output JSON into deletes.py to see the reason the tweet has
 ![DOD OEMBEDS WARNING](/assets/dod_oembeds_warning.png)
 
     
-_tweet.py_
-    
-    python utils/tweet.py 795847322957512704 > tweet.jsonl
-    
+### _tweet.py_
+
+We'll use the first tweet id in our dataset. 
     
 ![DOD TWEET ID](/assets/dod_tweet_id.png)
+    
+    python utils/tweet.py 1112143431197835264 > 1tweet.jsonl
 
  
-_tweet_compliance.py_
+### _tweet_compliance.py_
     
-    python utils/tweet_compliance.py test.txt > test.json 2> test_delete.txt
+    python utils/tweet_compliance.py nh_dod_ids.txt > nh_sub_dod.jsonl > dod_tweet_compliance.jsonl
+    
+The current tweets will be output to a dod_tweet_compliance.jsonl.
+    
+![DOD TWEET COMPLIANCE](/assets/dod_tweet_compliance.png)
+
+The ids of tweets that are not available are output to the command line along with the deleted tweets. 
+
+
+![DOD TWEET COMPLIANCE](/assets/dod_tweet_compliance1.png)
+
     
 _wayback.py_
     
