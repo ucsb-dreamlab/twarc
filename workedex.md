@@ -187,9 +187,13 @@ The tweet that had been identified as sensitive has now been removed.
 ![DOD EXTRACTOR](/assets/dod_extractor.png)
 
 
-_flakey.py_
+### _flakey.py_
 
     python utils/flakey.py nh_sub_ids.txt > nh_sub_flakey.csv
+    
+  
+![DOD FLAKEY](/assets/dod_flakey.png)
+
     
 ### _media_urls.py_
     
