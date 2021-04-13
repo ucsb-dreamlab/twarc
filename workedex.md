@@ -239,6 +239,9 @@ This returns a blank JSON because there are no retweets in the subsetted dataset
     
 ![DOD TIMES](/assets/dod_tweets.png) 
 
+
+*Needs updated ability to handle tweets that have text labeled as "full_text" rather than "text".*
+
     
 ### _tweetometer.py_
  
@@ -420,9 +423,13 @@ The ids of tweets that are not available are output to the command line along wi
 ![DOD TWEET COMPLIANCE](/assets/dod_tweet_compliance1.png)
 
     
-_wayback.py_
+### _wayback.py_
     
-    python utils/wayback.py tweets.jsonl > wayback.txt
+    python utils/wayback.py nh_dod.jsonl > dod_wayback.txt
+    
+
+![DOD WAYBACK](/assets/dod_wayback.png)
+
 
 <a name="organize"/>
 
@@ -447,6 +454,8 @@ _urls.py_
 _youtubedl.py_
    
     python utils/youtubedl.py nh_sub_dod.jsonl
+    
+*Open issue on Github Issue Page concerning the "freeze" module*
  
  
 [Back To Top](#worked-example)
