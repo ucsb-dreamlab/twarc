@@ -443,13 +443,15 @@ This one is pretty simple. It just sorts the dataset in ascending order by id. I
 
     python utils/sort_by_id.py nh_sub_dod.jsonl > nh_dod_sort_by_id.jsonl
     
-_unshrtn.py_    
+_unshrtn.py_     
     
     cat tweets.jsonl | utils/unshrtn.py > unshortn.jsonl
     
 _urls.py_
     
     cat unshortn.jsonl | utils/urls.py | sort | uniq -c | sort -nr > urls.txt
+    
+*requires unshrtn to be working*
    
 _youtubedl.py_
    
