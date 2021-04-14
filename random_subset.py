@@ -9,7 +9,7 @@ total = int(input("Enter the total number of tweet ids in the dataset: "))
 
 
 '''  Generating Random Line Numbers  '''
-print("Generating random ids")
+print("Generating random ids...")
 rand_lines = [] # create an empty list to hold the random line numbers
 num_lines = 0 # create a counter to track the number of lines
 
