@@ -1,6 +1,7 @@
 import random
 
 '''  User Input  '''
+# change to allow parsers like they use in the utilities
 tweets = input("Enter the name of your tweet id file: ")
 subset = input("Enter the name of the output tweet id file: ")
 length = int(input("Enter the number of tweet ids you would like to subset: "))
