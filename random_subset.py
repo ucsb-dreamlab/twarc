@@ -8,6 +8,7 @@ total = int(input("Enter the total number of tweet ids in the dataset: "))
 
 
 '''  Generating Random Line Numbers  '''
+print("Generating random ids")
 rand_lines = [] # create an empty list to hold the random line numbers
 num_lines = 0 # create a counter to track the number of lines
 
@@ -19,6 +20,7 @@ while num_lines < length: # while the number of lines is less than the subset le
 
 '''  Reading Files; Writing Random Tweet Ids To New File  '''
 with open(tweets, 'r') as firstfile, open(subset, 'a') as secondfile: # open both files
+        print("Transfering random ids...")
         count = 0 # number of lines in interation
         for i, line in enumerate(firstfile):
                 if count == length: # stop if length of subset has been reached
@@ -28,9 +30,9 @@ with open(tweets, 'r') as firstfile, open(subset, 'a') as secondfile: # open bot
                 else: # if it isn't, add it
                         secondfile.write(line) # writing to the file
                         count += 1 # increasing the counter
-                        print("Number of tweet ids loaded... ", count)
-
+                        
 '''  Close Both Files  '''
 firstfile.close()
 secondfile.close()
 
+print("Finished loading {} ids".format(count))
