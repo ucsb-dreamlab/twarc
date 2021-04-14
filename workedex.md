@@ -33,7 +33,9 @@ You are encouraged, but not required, to try out these utilities on your own bef
 
 The first step will be to unzip our dataset. It should unzip to a txt file titled ids.txt. For organizational purposes, we will rename this file nh_ids.txt for Nispey Hussle. You can keep the name ids.txt or modify it to fit your needs.
 
-There are 11,642,103 ids listed in ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python code to do this. Click 'View on Github' at the top of this page or visit the [ucsb-collaboratory twarc repository](https://github.com/ucsb-collaboratory/twarc) to download the file subset.py. Once downloaded, simply run subset.py to appy it to your ids file. Look at the code documentation for more explanation of what it does and how it works. The outputted file is titled nh_sub_ids.txt. 
+There are 11,642,103 ids listed in ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python program [subset.py](https://github.com/ucsb-collaboratory/twarc/subset.py) to do this.  Download subset.py and save it in your twarc file, then run it to appy it to your ids file. Look at the code documentation for more explanation of what it does and how it works. We will title our ouputted file nh_sub_ids.txt. 
+
+*Alternatively, see the python program [random_subset.py](https://github.com/ucsb-collaboratory/twarc/random_subset.py) to create a subset of random tweet ids.* 
 
 Next we will need to rehydrate the dataset.
 
