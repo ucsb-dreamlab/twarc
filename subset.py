@@ -8,8 +8,8 @@ length - The length you'd like your subset to be. Example user input: 20000
 Each id must be on a separate line in the original tweet file for this to work. The program reads line by line. 
 '''
 
-tweets = input("Enter the name of your tweet json: ")
-subset = input("Enter the name of the output json: ")
+tweets = input("Enter the name of your tweet ids file: ")
+subset = input("Enter the name of the output tweet ids file: ")
 length = int(input("Enter the number of tweets you would like to subset: "))
 
 # open both files
