@@ -2,7 +2,7 @@
 date: 03/08/2021
 output: html
 ---
-[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Organization](organization.md) • [System](system.md) • [Worked Example](workedex.md)
+[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Organization](organization.md) • [System](system.md) • [Worked Example](workedex.md) • [Resources](resources.md)
 
 
 # Status Utilities
