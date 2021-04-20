@@ -2,7 +2,7 @@
 date: 2021-03-15
 output: html
 ---
-[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md)
+[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md) • [Resources](resources.md)
 
 # Worked Example
 
@@ -17,23 +17,21 @@ output: html
 
 <a name="intro"/>
 
---------------------------------THIS PAGE IS CURRENTLY UNDER CONSTRUCTION------------------------------
+--------------------------------THIS PAGE IS CURRENTLY UNDER CONSTRUCTION------------------------------   
 
-For the worked example, we will run through the [2019 Nipsey Hussle Funeral Tweets](https://archive.org/details/nipsey-hustle-tweets). The tweet ids are available under Downloadable Options on the right-hand side of the page and are named nipsey-ids.txt.gz. (Note: The extension .gz is a file format and software application used for file compression and decompression. If you don't know how to open this type of file or are having trouble doing so, visit Utilities Home and scroll to Resources). 
+*This worked example does not cover basic twarc setup and configuration. If you have not installed twarc, do so at the [twarc DocNow](https://github.com/DocNow/twarc) or on the updated [twarc documentation page](https://twarc-project.readthedocs.io/en/latest/) has been moved.*   
 
-If you have not downloaded Twarc, do so at the [Twarc Doc Now](https://github.com/DocNow/twarc).
+You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. Visit the [Utilities Home page](utilities.md) and the corresponding sections for an explanation of each utility.    
 
-Once twarc is downloaded, move into your twarc directory then start the twarc session (using _twarc configure_ in the command line)
-
-You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. Revisit the utility page corresponding to each section for an explanation of each utility. 
+For the worked example, we will run through the [2019 Nipsey Hussle Funeral Tweets](https://archive.org/details/nipsey-hustle-tweets). The tweet ids are available under Downloadable Options on the right-hand side of the page and are named nipsey-ids.txt.gz. (Note: The extension .gz is a file format and software application used for file compression and decompression. If you don't know how to open this type of file or are having trouble doing so, visit [Resources](resources.md)).    
 
 <a name="prep"/>
 
 ## Prepping the Data
 
-The first step will be to unzip our dataset. It should unzip to a txt file titled ids.txt. For organizational purposes, we will rename this file nh_ids.txt for Nispey Hussle. You can keep the name ids.txt or modify it to fit your needs.
+The first step will be to unzip our dataset. It should unzip to a txt file titled ids.txt. For organizational purposes, we will rename this file nh_ids.txt for Nispey Hussle. You can keep the name ids.txt or modify it to fit your needs.   
 
-There are 11,642,103 ids listed in ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python program [subset.py](https://github.com/ucsb-collaboratory/twarc/subset.py) to do this.  Download subset.py and save it in your twarc file, then run it to appy it to your ids file. Look at the code documentation for more explanation of what it does and how it works. We will title our ouputted file nh_sub_ids.txt. 
+There are 11,642,103 ids listed in nh_ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python program [subset.py](https://github.com/ucsb-collaboratory/twarc/subset.py) to do this. Look at the code documentation for more explanation of what it does and how it works. We will title our ouputted file nh_sub_ids.txt. 
 
 *Alternatively, see the python program [random_subset.py](https://github.com/ucsb-collaboratory/twarc/random_subset.py) to create a subset of random tweet ids.* 
 
@@ -41,7 +39,8 @@ Next we will need to rehydrate the dataset.
 
     twarc hydrate nh_sub_ids.txt > nh_sub_tweets.jsonl
     
-*Note: If an account or tweet has been deleted from Twitter, it cannot be rehydrated. We will discuss this more later on*
+*Note: If an account or tweet has been deleted from Twitter, it cannot be rehydrated.*
+
 
 <a name="filter"/>
 
@@ -68,7 +67,7 @@ Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 
 ![DOD FILTER BY DATE](/assets/dod_filter_date.png)
 
 
-As we can see from the photo of the CSV (We can use the json2csv.py utility listed on the Visualization page and demonstrated below to check this utility and those following), the first tweet entries are from the DOD. Since we took a smaller sample of the dataset, using this filter allows us to only analyze tweets made on the DOD as our subset doesn't extend beyond March 31st. 
+As we can see from the photo of the CSV (We can use the _json2csv.py_ utility listed on the Visualization page and demonstrated [below](#visual) to check this utility and those following), the first tweet entries are from the DOD. Since we took a smaller sample of the dataset, using this filter allows us to only analyze tweets made on the DOD as our subset current doesn't extend beyond March 31st. 
     
 
 ### _filter_users.py_
@@ -82,19 +81,20 @@ This one can be a little tricky if the input file doesn't have proper formatting
    
 each on a separate line.
 
-We're going to use screen names for this example. We can collect these using json2csv.py utility (see Visualization page or example below for more information). 
+We're going to use screen names for this example. We can collect these using _json2csv.py_.
 
 
 ![DOD FILTER BY USERS INPUT1](/assets/dod_filter_users_input1.png)
 
 
-We can then copy the screen names (in this case, the first _ screen names listed) into our file of choice. 
+We can then copy the screen names (in this case, the first screen names listed) into our file of choice. 
 
 
 ![DOD FILTER BY USERS INPUT2](/assets/dod_filter_users_input2.png)
 
 
 Once we run our usage command, we will get a JSON containing only the tweets made by the screen names we listed in the file. 
+
  
     python utils/filter_users.py nh_dod_sn.txt nh_dod.jsonl > nh_dod_users.jsonl
     
@@ -109,6 +109,9 @@ _gender.py__
     
 ### _geo.py_ 
 
+Now we can create a file of tweets containing geo coordinates. 
+
+
     python utils/geo.py nh_dod.jsonl > nh_dod_geo.jsonl
     
     
@@ -120,7 +123,9 @@ Based on our results, there are only two tweets in our sample dataset (after bei
 
 ### _geofilter.py_ 
 
-By specifying that we want to filter by tweets without geo coordinates, we can get the tweets not returned by geo.py. 
+
+_geofilter.py_ works similarly to _geo.py_, but allows us to specify whether we want to filter by absence OR presence of geo coordinates. By specifying that we want to filter by tweets without geo coordinates, we can get the tweets not returned by _geo.py_. 
+
 
     python utils/geofilter.py nh_dod.jsonl --no-coordinates > nh_dod_geofilter.jsonl
   
@@ -130,14 +135,22 @@ By specifying that we want to filter by tweets without geo coordinates, we can g
     
 ### _noretweets.py_
 
+
+Next, we can remove retweets from our dataset. 
+
+
     python utils/noretweets.py nh_dod.jsonl > nh_dod_noretweets.jsonl
-    
+   
+   
 *Note: for the current dataset, this will just return our original dataset since there are no retweets*
 
 
 ### _sensitive.py_
+
+This utility will allow us to filter by the presence or absense of sensitive content in tweets. 
     
     python utils/sensitive.py nh_dod.jsonl > nh_dod_sensitive.jsonl
+    
     
 Column R is the variable possibly_sensitive, a boolean value (TRUE or FALSE) representing whether the tweet is considered sensitive. This first image is the dataset before running the utility sensitive.py. 
     
@@ -153,6 +166,9 @@ The tweet that had been identified as sensitive has now been removed.
 
 ### _search.py_
 
+This utility enables us to search for specific keywords in the dataset. Tweets containing the keyword will be output to the output file. 
+
+
     python utils/search.py shot nh_dod.jsonl > nh_dod_search.jsonl
     
 
@@ -167,13 +183,15 @@ The tweet that had been identified as sensitive has now been removed.
 
 ### _embeds.py_
 
+This utility returns the embeded...
+
     python utils/embeds.py nh_dod.jsonl > nh_dod_embeds.txt
     
 
 ![DOD EMBEDS](/assets/dod_embeds.png)
     
 
-### _emojis.py_    
+### _emojis.py_   
     
     python utils/emojis.py nh_dod.jsonl > nh_dod_emojis.txt
     
