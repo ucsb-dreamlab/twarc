@@ -24,8 +24,8 @@ output: html
 
 MAC terminal command [cheat sheet](https://www.makeuseof.com/tag/mac-terminal-commands-cheat-sheet/)    
 
-Windows command prompt [cheat sheet](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf)   
-          *Windows powershell can be found in the microsoft store for free. [This](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1) is a good resource on powershell and why you might want to download it. Twarc can be run successfully on Windows Command Prompt, so Powershell is not necessary.*    
+Windows command prompt [cheat sheet](https://cmdref.net/os/windows/command/index.html)   
+*Windows powershell can be found in the microsoft store for free. [This](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1) is a good resource on powershell and why you might want to download it. Twarc can be run successfully on Windows Command Prompt, so Powershell is not necessary.*    
 
 Linux command line [cheat sheet](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)   
 
