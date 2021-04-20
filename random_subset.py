@@ -1,3 +1,18 @@
+'''
+This python program will take a file of dehydrated tweets and n random tweets ids where n is the user's chosen subset length. To use this program, download it from Github and store it in your twarc utilities file. 
+
+Usage: python utils/random_subset.py 
+
+Takes user input of the following:
+
+tweets - The name of the original tweet id file you'd like to take a subset of. This should be entered without quotes. Example user input: nh_ids.txt
+subset - The name of a file you would like the subset ids to output to. The file doesn't have to exist prior as it will be created. Example user input: nh_sub_tweets.txt
+length - The length you'd like your subset to be. Example user input: 20000
+total - The total number of tweet ids in the dataset you'd like to take a subset of. 
+
+Each id must be on a separate line in the original tweet file for this to work. The program reads line by line. 
+'''
+
 import random
 
 '''  User Input  '''
