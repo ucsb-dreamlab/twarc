@@ -1,5 +1,5 @@
 '''
-This python program will take a file of dehydrated tweets and return the first n tweets where n is the user's chosen subset length. To use this program, download it from Github and store it in your twarc utilities file. 
+This python program will take a file of dehydrated tweets and return the first n tweet ids where n is the user's chosen subset length. To use this program, download it from Github and store it in your twarc utilities file. 
 
 Usage: python utils/subset.py 
 
