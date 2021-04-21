@@ -109,6 +109,7 @@ _gender.py__
     
 ### _geo.py_ 
 
+
 Now we can create a file of tweets containing geo coordinates. 
 
 
@@ -183,7 +184,8 @@ This utility enables us to search for specific keywords in the dataset. Tweets c
 
 ### _embeds.py_
 
-This utility returns the embeded...
+This utility creates a list of media urls used in the dataset. 
+
 
     python utils/embeds.py nh_dod.jsonl > nh_dod_embeds.txt
     
@@ -192,6 +194,9 @@ This utility returns the embeded...
     
 
 ### _emojis.py_   
+
+We want to look at the emoji statistics i.e. which emojis are used and how often. 
+
     
     python utils/emojis.py nh_dod.jsonl > nh_dod_emojis.txt
     
