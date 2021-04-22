@@ -12,6 +12,6 @@ The twarc readme is fairly comprehensive.  If you are comfortable running Python
 
 This guide concentrates on running the individual [twarc utilities](utilities.md).
 
-### Twarc v2 
+### [Twarc v2](twarcv2.md).
 
-Twitter has just released an update of their [API](https://blog.twitter.com/developer/en_us/topics/tools/2020/introducing_new_twitter_api.html). (More info found [here](https://news.docnow.io/twarc2-779278e66ea0) as well). Currently, it is only available as early access for academic research so if you're learning twarc for personal use or analysis, it won't be available. Luckily, this guide is for twarc v1.1. We hope to integrate the new API as it is developed, but we will keep the documentation on the older version.    
+Twitter has just released an updated version of its API which is only available as early access for academic research. While it is in the developmental phase, v1.1 is still available for use. As such, this guide concerns the implementation of twarc, not twarc2. We hope to integrate the new API as it is developed, but we will keep the documentation on the older version until Twitter removes v1.1. 
