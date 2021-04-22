@@ -1,4 +1,4 @@
-## This is an experiment
+## This is an Experiment
 
 We are practicing using github pages to produce helpful content for our communities to get work done.
 
