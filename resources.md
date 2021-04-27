@@ -33,8 +33,11 @@ Linux command line [cheat sheet](https://cheatography.com/davechild/cheat-sheets
 
 ## File Types
 
-JSON Chrome viewer [extension](https://chrome.google.com/webstore/detail/json-viewer/aimiinbnnkboelefkjlenlgimcabobli?hl=en-US)
+JSON Chrome viewer [extension](https://chrome.google.com/webstore/detail/json-viewer/aimiinbnnkboelefkjlenlgimcabobli?hl=en-US).
 
+Unzipping txt.gz files:
+- For [Windows](https://www.wikihow.com/Extract-a-Gz-File)   
+- For [MACs](https://www.wikihow.com/Extract-a-Gz-File#On-Mac)   
 
 
  
