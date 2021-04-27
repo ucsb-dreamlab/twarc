@@ -4,7 +4,7 @@ output: html
 ---
 [Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md) • [Resources](resources.md)
 
-# Worked Example
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Worked Example
 
 ##### Table of Contents  
 [Intro](#intro)  
@@ -75,10 +75,10 @@ As we can see from the photo of the CSV (We can use the _json2csv.py_ utility li
    
 This one can be a little tricky if the input file doesn't have proper formatting. The input must be supplied as a list in a TXT or CSV file. It can contain:
 
-&nbsp;&nbsp;screen names  
-   user ids  
-   screen name,user id  
-   user id,screen name  
+&nbsp;&nbsp;&nbsp;screen names  
+&nbsp;&nbsp;&nbsp;user ids  
+&nbsp;&nbsp;&nbsp;screen name,user id  
+&nbsp;&nbsp;&nbsp;user id,screen name  
    
 each on a separate line.
 
