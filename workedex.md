@@ -73,10 +73,10 @@ As we can see from the photo of the CSV (We can use the _json2csv.py_ utility li
    
 This one can be a little tricky if the input file doesn't have proper formatting. The input must be supplied as a list in a TXT or CSV file. It can contain:
 
-&nbsp;&nbsp;&nbsp;screen names  
-&nbsp;&nbsp;&nbsp;user ids  
-&nbsp;&nbsp;&nbsp;screen name,user id  
-&nbsp;&nbsp;&nbsp;user id,screen name  
+&nbsp;&nbsp;&nbsp;;&nbsp;screen names  
+&nbsp;&nbsp;&nbsp;;&nbsp;user ids  
+&nbsp;&nbsp;&nbsp;;&nbsp;screen name,user id  
+&nbsp;&nbsp;&nbsp;;&nbsp;user id,screen name  
    
 each on a separate line.
 
@@ -99,15 +99,14 @@ Once we run our usage command, we will get a JSON containing only the tweets mad
     
 
 ![DOD FILTER BY USER](/assets/dod_filter_users.png)
-    
 
-_gender.py__
 
-    python utils/gender.py --gender female tweets.jsonl | utils/wordcloud.py > tweets-female.html python utils/gender.py --gender [male|female|unknown] tweet_file *
-    
+The output is the metadata about the users we supplied.         
     
 ### _geo.py_ 
 
+
+Before working with this utility, check out the [not_mapping_twitter repo](https://github.com/ucsb-collaboratory/not_mapping_twitter) to read the precautions of geocoordinates. 
 
 Now we can create a file of tweets containing geo coordinates. 
 
@@ -142,7 +141,7 @@ Next, we can remove retweets from our dataset.
     python utils/noretweets.py nh_dod.jsonl > nh_dod_noretweets.jsonl
    
    
-*Note: for the current dataset, this will just return our original dataset since there are no retweets*
+*Note: for the current dataset, this will just return our original dataset since there are no retweets. Usually, however, you would see a difference in the dataset before and after this utility is run.*
 
 
 ### _sensitive.py_
@@ -166,19 +165,24 @@ The tweet that had been identified as sensitive has now been removed.
 
 ### _search.py_
 
-This utility enables us to search for specific keywords in the dataset. Tweets containing the keyword will be output to the output file. 
+This utility enables us to search for specific keywords in the dataset. Tweets containing the keyword will be output to the output file. We'll search the dataset for tweets containing the word 'shot'.
 
 
     python utils/search.py shot nh_dod.jsonl > nh_dod_search.jsonl
     
 
-![DOD SEARCH SHOT](/assets/dod_search.png)
+![DOD SEARCH SHOT](/assets/dod_search.png)   
+
+
+By searching shot, we can identify (for the most part) the tweets that are reacting to Nipsey Hussle getting shot. As you might notice, the first tweet returned is using 'shot' in a different context. 
     
 
 <a name="extract"/>
 
 
 ## Extracting the Data
+
+Data extraction utilities focus on extracting and returning specific tweet metadata.
 
 
 ### _embeds.py_
@@ -190,7 +194,7 @@ This utility creates a list of media urls used in the dataset.
     
 
 ![DOD EMBEDS](/assets/dod_embeds.png)
-    
+
 
 ### _emojis.py_   
 
@@ -202,6 +206,9 @@ We want to look at the emoji statistics i.e. which emojis are used and how often
 
 ![DOD EMOJIS](/assets/dod_emojis.png)
     
+
+As we can see, there are 5 emojis that are the same symbol of different skin tones. The general sentiment of all emojis listed are representative of religion, grief, and sadness. 
+
 
 ### _extractor.py_
 
