@@ -29,7 +29,7 @@ For the worked example, we will run through the [2019 Nipsey Hussle Funeral Twee
 
 ## Prepping the Data
 
-The first step will be to unzip our dataset. It should unzip to a txt file titled ids.txt. For organizational purposes, we will rename this file nh_ids.txt for Nispey Hussle. You can keep the name ids.txt or modify it to fit your needs.   
+The first step will be to unzip our dataset. It should unzip to a txt file titled ids.txt. For organizational purposes, we will rename this file nh_ids.txt for Nispey Hussle. You can keep the name ids.txt or modify it to fit your needs. See [Resources](resources.md) for help on unzipping the txt.gz file. 
 
 There are 11,642,103 ids listed in nh_ids.txt. This amount of data is normally great for analysis because it gives us so much to work with. However, it also takes a long time to process. For this example, we will only be looking at the first 20,000 tweets. For ease of use, I have written the python program [subset.py](https://github.com/ucsb-collaboratory/twarc/subset.py) to do this. Look at the code documentation for more explanation of what it does and how it works. We will title our ouputted file nh_sub_ids.txt. 
 
@@ -59,7 +59,7 @@ We'd like to start out by removing duplicate ids and retweets from our dataset.
 
 ### _filter_date.py_
 
-Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 2019).
+Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 2019). This might not limit the date to only March 31st, 2019 with a bigger dataset (or when using random_subset.py) because you can only specify a min or a max date. If you would like to limit the date, you will have to run _filter_date.py_ twice: the first time filtering by mindate OR maxdate, and the second time filtering the ouputted dataset by the remaining parameter. For our current dataset, this works because the tweets only date up to March 31st so by specifying a mindate, we are only left with tweets made on March 31st, 2019. 
 
     python utils/filter_date.py --mindate 31-march-2019 nh_sub_deduplicate.jsonl > nh_dod.jsonl
     
@@ -67,7 +67,7 @@ Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 
 ![DOD FILTER BY DATE](/assets/dod_filter_date.png)
 
 
-As we can see from the photo of the CSV (We can use the _json2csv.py_ utility listed on the Visualization page and demonstrated [below](#visual) to check this utility and those following), the first tweet entries are from the DOD. Since we took a smaller sample of the dataset, using this filter allows us to only analyze tweets made on the DOD as our subset current doesn't extend beyond March 31st. 
+As we can see from the photo of the CSV (We can use the _json2csv.py_ utility listed on the Visualization page and demonstrated [below](#visual) to check this utility and those following), the first tweet entries are from the DOD in order of time created. 
     
 
 ### _filter_users.py_
