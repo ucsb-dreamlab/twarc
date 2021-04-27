@@ -4,7 +4,7 @@ output: html
 ---
 [Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md) • [Resources](resources.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Worked Example
+#  Worked Example
 
 ##### Table of Contents  
 [Intro](#intro)  
@@ -15,9 +15,7 @@ output: html
 [Getting the Status of the Data](#status)  
 [Organzing the Data](#organize)  
 
-<a name="intro"/>
-
---------------------------------THIS PAGE IS CURRENTLY UNDER CONSTRUCTION------------------------------   
+<a name="intro"/>   
 
 *This worked example does not cover basic twarc setup and configuration. If you have not installed twarc, do so at the [twarc DocNow](https://github.com/DocNow/twarc) or on the updated [twarc documentation page](https://twarc-project.readthedocs.io/en/latest/) has been moved.*   
 
