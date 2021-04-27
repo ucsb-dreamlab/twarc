@@ -59,7 +59,8 @@ We'd like to start out by removing duplicate ids and retweets from our dataset.
 
 ### _filter_date.py_
 
-Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 2019). This might not limit the date to only March 31st, 2019 with a bigger dataset (or when using random_subset.py) because you can only specify a min or a max date. If you would like to limit the date, you will have to run _filter_date.py_ twice: the first time filtering by mindate OR maxdate, and the second time filtering the ouputted dataset by the remaining parameter. For our current dataset, this works because the tweets only date up to March 31st so by specifying a mindate, we are only left with tweets made on March 31st, 2019. 
+Then we want to look at tweets made the day of Nipsey Hussle death (March 31st, 2019). This might not limit the date to only March 31st, 2019 with a bigger dataset (or when using random_subset.py) because you can only specify a min or a max date. If you would like to limit the date, you will have to run _filter_date.py_ twice: the first time filtering by mindate OR maxdate, and the second time filtering the ouputted dataset by the remaining parameter. For our current dataset, this works because the tweets only date up to March 31st so by specifying a mindate, we are only left with tweets made on March 31st, 2019.   
+
 
     python utils/filter_date.py --mindate 31-march-2019 nh_sub_deduplicate.jsonl > nh_dod.jsonl
     
@@ -74,7 +75,7 @@ As we can see from the photo of the CSV (We can use the _json2csv.py_ utility li
    
 This one can be a little tricky if the input file doesn't have proper formatting. The input must be supplied as a list in a TXT or CSV file. It can contain:
 
-   screen names  
+&nbsp;&nbsp;screen names  
    user ids  
    screen name,user id  
    user id,screen name  
