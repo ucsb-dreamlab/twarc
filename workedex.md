@@ -230,9 +230,12 @@ As we can see, there are 5 emojis that are the same symbol of different skin ton
 
 
     python utils/flakey.py nh_dod_ids.txt > nh_dod_flakey.csv
-    
+     
   
 ![DOD FLAKEY](/assets/dod_flakey.png)
+
+
+The output could also be a TXT.
 
     
 ### _media_urls.py_
@@ -246,7 +249,9 @@ As we can see, there are 5 emojis that are the same symbol of different skin ton
     
     python utils/retweets.py nh_dod.jsonl > nh_dod_retweets.jsonl
     
+    
 This returns a blank JSON because there are no retweets in the subsetted dataset filtered by date. However, when we run this on the original subsetted dataset:
+
     
     python utils/retweets.py nh_dod_tweets.jsonl > nh_dod_retweets.jsonl
     
