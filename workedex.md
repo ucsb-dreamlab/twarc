@@ -52,7 +52,14 @@ Filtering the data can be seen as a way to clean the data before analysis.
 
 We'd like to start out by removing duplicate ids and retweets from our dataset.
 
-    python utils/deduplicate.py --extract-retweets nh_sub_tweets.jsonl > nh_sub_deduplicate.jsonl
+    python utils/deduplicate.py nh_sub_tweets.jsonl > nh_sub_deduplicate.jsonl
+    
+    
+We can also run 
+
+    python utils/deduplicate.py --extract-retweets nh_sub_tweets.jsonl > nh_sub_dedupretweets.jsonl
+    
+to extract just the retweets to a new JSON. 
     
 
 ### _filter_date.py_
@@ -101,7 +108,7 @@ Once we run our usage command, we will get a JSON containing only the tweets mad
 ![DOD FILTER BY USER](/assets/dod_filter_users.png)
 
 
-The output is the metadata about the users we supplied.         
+The output is the metadata about the users we supplied. Notice that there is no cap on the number of tweets by the same screen name.      
     
 ### _geo.py_ 
 
@@ -135,13 +142,10 @@ _geofilter.py_ works similarly to _geo.py_, but allows us to specify whether we 
 ### _noretweets.py_
 
 
-Next, we can remove retweets from our dataset. 
+Next, we'll remove retweets from our dataset. 
 
 
     python utils/noretweets.py nh_dod.jsonl > nh_dod_noretweets.jsonl
-   
-   
-*Note: for the current dataset, this will just return our original dataset since there are no retweets. Usually, however, you would see a difference in the dataset before and after this utility is run.*
 
 
 ### _sensitive.py_
@@ -215,7 +219,9 @@ As we can see, there are 5 emojis that are the same symbol of different skin ton
     python utils/extractor.py user:screen_name entities:hashtags -output nh_dod_extractor.csv
 
 
-![DOD EXTRACTOR](/assets/dod_extractor.png)
+![DOD EXTRACTOR](/assets/dod_extractor1.png)   
+
+![DOD EXTRACTOR](/assets/dod_extractor2.png)
 
 
 ### _flakey.py_
@@ -474,22 +480,6 @@ This one is pretty simple. It just sorts the dataset in ascending order by id. I
 
     python utils/sort_by_id.py nh_sub_dod.jsonl > nh_dod_sort_by_id.jsonl
     
-_unshrtn.py_     
-    
-    cat tweets.jsonl | utils/unshrtn.py > unshortn.jsonl
-    
-_urls.py_
-    
-    cat unshortn.jsonl | utils/urls.py | sort | uniq -c | sort -nr > urls.txt
-    
-*requires unshrtn to be working*
-   
-_youtubedl.py_
-   
-    python utils/youtubedl.py nh_sub_dod.jsonl
-    
-*Open issue on Github Issue Page concerning the "freeze" module*
- 
  
 [Back To Top](#worked-example)
 
