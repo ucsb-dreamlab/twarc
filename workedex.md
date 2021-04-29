@@ -490,6 +490,26 @@ This one is pretty simple. It just sorts the dataset in ascending order by id. I
 
     python utils/sort_by_id.py nh_dod.jsonl > nh_dod_sort_by_id.jsonl
     
+### _unshrtn.py_ 
+
+We want to be able to print out the unshortened urls in the dataset. To do so, we must first use _unshrtn.py_ to fully expand the urls, and then _urls.py_ to print them out. 
+
+    python utils/unshrtn.py nh_dod.jsonl > dod_unshrtn.jsonl
+
+### _urls.py_
+
+    python utils/urls.py dod_unshrtn.jsonl > dod_urls.txt
+    
+This is the output from using _unshrtn.py_ before running _urls.py_.
+
+![DOD URLS](/assets/dod_urls.png)
+
+We can compare this with the ouput from running _urls.py_ without using _unshrtn.py_ first. 
+
+![DOD URLS2](/assets/dod_urls2.png)
+
+
+    
  
 [Back To Top](#worked-example)
 
