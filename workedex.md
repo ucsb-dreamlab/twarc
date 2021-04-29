@@ -19,9 +19,10 @@ output: html
 
 *This worked example does not cover basic twarc setup and configuration. If you have not installed twarc, do so at the [twarc DocNow](https://github.com/DocNow/twarc) or on the updated [twarc documentation page](https://twarc-project.readthedocs.io/en/latest/) has been moved.*   
 
-You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. Visit the [Utilities Home page](utilities.md) and the corresponding sections for an explanation of each utility.    
+You are encouraged, but not required, to try out these utilities on your own before viewing the worked example code and outputs. Visit the [Utilities Home page](utilities.md) and the corresponding sections for an explanation of each utility, as well as parameters available that are not included in this worked example.  
 
-For the worked example, we will run through the [2019 Nipsey Hussle Funeral Tweets](https://archive.org/details/nipsey-hustle-tweets). The tweet ids are available under Downloadable Options on the right-hand side of the page and are named nipsey-ids.txt.gz. (Note: The extension .gz is a file format and software application used for file compression and decompression. If you don't know how to open this type of file or are having trouble doing so, visit [Resources](resources.md)).    
+For the worked example, we will run through the [2019 Nipsey Hussle Funeral Tweets](https://archive.org/details/nipsey-hustle-tweets). The tweet ids are available under Downloadable Options on the right-hand side of the page and are named nipsey-ids.txt.gz. (Note: The extension .gz is a file format and software application used for file compression and decompression. If you don't know how to open this type of file or are having trouble doing so, visit [Resources](resources.md)). 
+
 
 <a name="prep"/>
 
@@ -52,12 +53,15 @@ Filtering the data can be seen as a way to clean the data before analysis.
 
 We'd like to start out by removing duplicate ids and retweets from our dataset.
 
+
     python utils/deduplicate.py nh_sub_tweets.jsonl > nh_sub_deduplicate.jsonl
     
     
 We can also run 
 
+
     python utils/deduplicate.py --extract-retweets nh_sub_tweets.jsonl > nh_sub_dedupretweets.jsonl
+    
     
 to extract just the retweets to a new JSON. 
     
@@ -444,7 +448,7 @@ We can then feed the output JSON into deletes.py to see the reason the tweet has
     
 ### _tweet.py_
 
-We'll use the first tweet id in our dataset. 
+We'll use one of the first tweet id in our dataset. 
     
 ![DOD TWEET ID](/assets/dod_tweet_id.png)
     
@@ -466,6 +470,7 @@ The ids of tweets that are not available are output to the command line along wi
 
     
 ### _wayback.py_
+
     
     python utils/wayback.py nh_dod.jsonl > dod_wayback.txt
     
@@ -483,7 +488,7 @@ The ids of tweets that are not available are output to the command line along wi
 
 This one is pretty simple. It just sorts the dataset in ascending order by id. It's essentially the same as sorting by date as tweet ids are parsed out in order of creation.
 
-    python utils/sort_by_id.py nh_sub_dod.jsonl > nh_dod_sort_by_id.jsonl
+    python utils/sort_by_id.py nh_dod.jsonl > nh_dod_sort_by_id.jsonl
     
  
 [Back To Top](#worked-example)
