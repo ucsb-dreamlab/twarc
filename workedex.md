@@ -452,7 +452,7 @@ We'll use one of the first tweet id in our dataset.
     
 ![DOD TWEET ID](/assets/dod_tweet_id.png)
     
-    python utils/tweet.py 1112143431197835264 > dod_tweet.jsonl
+    python utils/tweet.py 1112143431197835264 > nh_dod_tweet.jsonl
 
  
 ### _tweet_compliance.py_
@@ -472,7 +472,7 @@ The ids of tweets that are not available are output to the command line along wi
 ### _wayback.py_
 
     
-    python utils/wayback.py nh_dod.jsonl > dod_wayback.txt
+    python utils/wayback.py nh_dod.jsonl > nh_dod_wayback.txt
     
 
 ![DOD WAYBACK](/assets/dod_wayback.png)
@@ -494,11 +494,11 @@ This one is pretty simple. It just sorts the dataset in ascending order by id. I
 
 We want to be able to print out the unshortened urls in the dataset. To do so, we must first use _unshrtn.py_ to fully expand the urls, and then _urls.py_ to print them out. 
 
-    python utils/unshrtn.py nh_dod.jsonl > dod_unshrtn.jsonl
+    python utils/unshrtn.py nh_dod.jsonl > nh_dod_unshrtn.jsonl
 
 ### _urls.py_
 
-    python utils/urls.py dod_unshrtn.jsonl > dod_urls.txt
+    python utils/urls.py dod_unshrtn.jsonl > nh_dod_urls.txt
     
 This is the output from using _unshrtn.py_ before running _urls.py_.
 
@@ -509,6 +509,11 @@ We can compare this with the ouput from running _urls.py_ without using _unshrtn
 ![DOD URLS2](/assets/dod_urls2.png)
 
 
+### _youtubedl.py_
+
+This utility downloads youtube content and places it in a directory _youtubedl_. 
+
+    python utils/youtubedl.py nh_dod.jsonl > nh_dod_youtubedl.jsonl
     
  
 [Back To Top](#worked-example)
