@@ -1,11 +1,7 @@
 ---
-date: 03/08/2021
-output: html
+layout: page
+title: Status Utilities
 ---
-[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • Status • [Organization](organization.md) • [System](system.md) • [Worked Example](workedex.md) • [Resources](resources.md)
-
-
-# Status Utilities
 
 ##### Table of Contents 
 [deleted.py](#deleted.py)  
