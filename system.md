@@ -1,10 +1,7 @@
 ---
-date: 03/08/2021
-output: html
+layout: page
+title: System Utilities
 ---
-[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • System • [Worked Example](workedex.md) • [Resources](resources.md)
-
-# System Utilities
 
 ##### Table of Contents  
 [auth_timing.py](#auth_timing.py)  
