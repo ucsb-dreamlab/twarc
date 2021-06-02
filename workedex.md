@@ -1,10 +1,7 @@
 ---
-date: 2021-03-15
-output: html
+layout: page
+title: Worked Example
 ---
-[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md) • Worked Example • [Resources](resources.md)
-
-#  Worked Example
 
 ##### Table of Contents  
 [Intro](#intro)  
