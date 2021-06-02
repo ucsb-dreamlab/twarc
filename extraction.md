@@ -1,11 +1,7 @@
 ---
-date: 03/08/2021
-output: html
+layout: page
+title: Extraction Utilities
 ---
-[Utilities Home Page](utilities.md) • [Filtering](filtering.md) • Extraction • [Visualization](visualization.md) • [Status](status.md) • [Organization](organization.md) • [System](system.md) • [Worked Example](workedex.md) • [Resources](resources.md)
-
-
-# Extraction Utilities
 
 ##### Table of Contents  
 [embeds.py](#embeds.py)  
