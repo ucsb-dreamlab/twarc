@@ -1,8 +1,7 @@
 ---
-date: 03/02/2021
-output: html
+layout: page
+title: Twarc Utilities
 ---
-# Twarc Utilities
 
 ##### Table of Contents  
 [Filtering](#filtering)  
