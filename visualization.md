@@ -1,11 +1,7 @@
 ---
-date: 03/08/2021
-output: html
+layout: page
+title: Visualization Utilities
 ---
-[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • Visualization • [Status](status.md) • [Organization](organization.md) • [System](system.md) • [Worked Example](workedex.md) • [Resources](resources.md)
-
-
-# Visualization Utilities
 
 ##### Table of Contents  
 [geojson.py](#geojson.py)  
