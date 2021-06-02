@@ -1,11 +1,7 @@
 ---
-date: 03/08/2021
-output: html
+layout: page
+title: Organization Utilities
 ---
-[Utilities Home](utilities.md) • [Filtering](filtering.md) • [Extraction](extraction.md) • [Visualization](visualization.md) • [Status](status.md) • Organization • [System](system.md) • [Worked Example](workedex.md) • [Resources](resources.md)
-
-
-# Organization Utilities
 
 ##### Table of Contents  
 [sort_by_id.py](#sort_by_id.py)  
