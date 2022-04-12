@@ -12,6 +12,6 @@ The twarc readme is fairly comprehensive.  If you are comfortable running Python
 
 This guide concentrates on running the individual [twarc utilities](utilities.md).
 
-### [Twitter v2](https://github.com/ucsb-collaboratory/twitter/blob/main/v2.md)
+### [Twitter v2](https://ucsb-collaboratory.github.io/twitter/v2.html)
 
 Twitter has just released an updated version of its API which is only available as early access for academic research. While it is in the developmental phase, v1.1 is still available for use. As such, this guide concerns the implementation of twarc, not twarc2. We hope to integrate the new API as it is developed, but we will keep the documentation on the older version until Twitter removes v1.1. 
